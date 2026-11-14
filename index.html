@@ -34,13 +34,13 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                National A-to-Z Directory • Unique Imagery & Official Websites
+                National A-to-Z Directory • Bowling, Yacht, Social & Country Clubs
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore private social clubs, zero bond lounges, women's clubs, golf, yacht, and country clubs with unique photography and direct website access across all 50 states.
+                Explore bowling alleys, country clubs, private social lounges, yacht clubs, and sporting associations with direct official links across all 50 states.
             </p>
         </div>
     </header>
@@ -82,10 +82,24 @@
         <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
+    <!-- Legal Disclaimer Notice -->
+    <section class="max-w-7xl mx-auto px-4 py-6 w-full">
+        <div class="bg-slate-900 text-slate-300 text-xs rounded-2xl p-6 border border-slate-800 leading-relaxed shadow-sm">
+            <p class="font-bold text-amber-400 uppercase tracking-widest mb-2"><i class="fa-solid fa-scale-balanced mr-1"></i> Legal Disclaimer & Directory Notice</p>
+            <p>
+                <strong>MrClubs.com</strong> is an independent, informational directory website. All product names, logos, brands, trademarks, and registered trademarks are property of their respective owners. Mention of specific clubs, organizations, or trademarks on this site does not imply endorsement, affiliation, or sponsorship by or with MrClubs.com. 
+            </p>
+            <p class="mt-2">
+                Directory listings, contact numbers, street addresses, amenities, pricing, membership rules, and operating hours are subject to change without notice. MrClubs.com does not guarantee the accuracy, completeness, or timeliness of any information listed. Users and prospective members are strongly advised to contact each club directly for the most current pricing, policies, and membership requirements.
+            </p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
         <p class="text-white font-bold text-sm mb-1">MrClubs.com</p>
-        <p>The Comprehensive A-to-Z National Directory of Clubs across all 50 States with Unique Photography & Direct Official Links.</p>
+        <p class="mb-2">The Comprehensive A-to-Z National Directory of Clubs across all 50 States.</p>
+        <p class="text-slate-500">&copy; 2026 MrClubs.com. All Rights Reserved. Independent Directory Portal.</p>
     </footer>
 
     <!-- Modal (For Adding / Claiming Listings) -->
@@ -99,7 +113,7 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Zero Bond" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Pinheads Bowling Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -110,15 +124,19 @@
                             <option value="Beach Clubs">Beach Clubs</option>
                             <option value="Bike Clubs">Bike Clubs</option>
                             <option value="Book Clubs">Book Clubs</option>
+                            <option value="Bowling & Alley Clubs" selected>Bowling Clubs</option>
                             <option value="Country Clubs">Country Clubs</option>
                             <option value="Day Clubs">Day Clubs</option>
                             <option value="Dinner Clubs">Dinner Clubs</option>
+                            <option value="Equestrian & Polo Clubs">Equestrian & Polo</option>
                             <option value="Fitness Clubs">Fitness Clubs</option>
                             <option value="Gardening Clubs">Gardening Clubs</option>
                             <option value="Golf Clubs">Golf Clubs</option>
                             <option value="Music Clubs">Music Clubs</option>
                             <option value="Night Clubs">Night Clubs</option>
-                            <option value="Private Social Clubs" selected>Private Social Clubs</option>
+                            <option value="Pickleball & Racquet Clubs">Pickleball Clubs</option>
+                            <option value="Private Social Clubs">Private Social Clubs</option>
+                            <option value="Ski & Snowboard Clubs">Ski Clubs</option>
                             <option value="Tennis & Racquet Clubs">Tennis Clubs</option>
                             <option value="Travel Clubs">Travel Clubs</option>
                             <option value="Women's Clubs">Women's Clubs</option>
@@ -135,16 +153,16 @@
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Beverly Hills" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Las Vegas" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
-                        <input type="text" id="inPhone" placeholder="(310) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(702) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Street Address *</label>
-                    <input type="text" id="inAddress" required placeholder="e.g. 1700 Chevy Chase Dr" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inAddress" required placeholder="e.g. 4500 Paradise Rd" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Official Website URL *</label>
@@ -156,7 +174,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Membership perks, dining, access, or events..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <textarea id="inDesc" rows="2" placeholder="Membership perks, leagues, or facilities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -170,6 +188,98 @@
     <script>
         window.onload = function () {
             var clubs = [
+                // --- BOWLING CLUBS ---
+                { 
+                    name: "South Point Bowling Plaza & Club", 
+                    category: "Bowling & Alley Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "9777 Las Vegas Blvd S", 
+                    phone: "(702) 797-8080", 
+                    website: "https://southpointcasino.com", 
+                    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "World-class tournament bowling facility and member bowling club hosting national championships." 
+                },
+                { 
+                    name: "Bowlmor Lanes & VIP Lounge", 
+                    category: "Bowling & Alley Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "110 University Pl", 
+                    phone: "(212) 255-8188", 
+                    website: "https://www.bowlero.com", 
+                    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Boutique bowling lanes, private lounges, and league bowling club in Greenwich Village." 
+                },
+                { 
+                    name: " Williamsburg Bowling & Social Club", 
+                    category: "Bowling & Alley Clubs", 
+                    city: "Williamsburg", 
+                    state: "VA", 
+                    address: "5530 Richmond Rd", 
+                    phone: "(757) 555-0129", 
+                    website: "https://www.williamsburgbowling.com", 
+                    image: "https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=800&q=80",
+                    verified: false, 
+                    desc: "Local recreational bowling leagues, youth tournaments, and social club gatherings." 
+                },
+
+                // --- PICKLEBALL & RACQUET CLUBS ---
+                { 
+                    name: "National Pickleball League Hub", 
+                    category: "Pickleball & Racquet Clubs", 
+                    city: "Austin", 
+                    state: "TX", 
+                    address: "1200 Barton Springs Rd", 
+                    phone: "(512) 555-0177", 
+                    website: "https://www.nplpickleball.com", 
+                    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Premier championship courts, pro shop, and member club for competitive pickleball." 
+                },
+
+                // --- EQUESTRIAN & POLO CLUBS ---
+                { 
+                    name: "Santa Barbara Polo & Racquet Club", 
+                    category: "Equestrian & Polo Clubs", 
+                    city: "Carpinteria", 
+                    state: "CA", 
+                    address: "3300 Via Real", 
+                    phone: "(805) 684-6683", 
+                    website: "https://sbpolo.com", 
+                    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic high-goal polo club hosting elite equestrian matches and social memberships." 
+                },
+                { 
+                    name: "Greenwich Polo Club", 
+                    category: "Equestrian & Polo Clubs", 
+                    city: "Greenwich", 
+                    state: "CT", 
+                    address: "1 Hurlingham Dr", 
+                    phone: "(203) 555-0192", 
+                    website: "https://greenwichpoloclub.com", 
+                    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Prestigious New England polo club featuring Sunday matches and private tailgating." 
+                },
+
+                // --- SKI & SNOWBOARD CLUBS ---
+                { 
+                    name: "Aspen Valley Ski & Snowboard Club", 
+                    category: "Ski & Snowboard Clubs", 
+                    city: "Aspen", 
+                    state: "CO", 
+                    address: "300 AVSC Dr", 
+                    phone: "(970) 925-2720", 
+                    website: "https://www.teamaspen.com", 
+                    image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "World-renowned winter sports club fostering alpine, freestyle, and snowboarding excellence." 
+                },
+
                 // --- ZERO BOND & MAJOR PRIVATE SOCIAL CLUBS ---
                 { 
                     name: "Zero Bond", 
@@ -522,15 +632,19 @@
                 { id: "Beach Clubs", label: "Beach Clubs" },
                 { id: "Bike Clubs", label: "Bike Clubs" },
                 { id: "Book Clubs", label: "Book Clubs" },
+                { id: "Bowling & Alley Clubs", label: "Bowling Clubs" },
                 { id: "Country Clubs", label: "Country Clubs" },
                 { id: "Day Clubs", label: "Day Clubs" },
                 { id: "Dinner Clubs", label: "Dinner Clubs" },
+                { id: "Equestrian & Polo Clubs", label: "Equestrian & Polo" },
                 { id: "Fitness Clubs", label: "Fitness Clubs" },
                 { id: "Gardening Clubs", label: "Gardening Clubs" },
                 { id: "Golf Clubs", label: "Golf Clubs" },
                 { id: "Music Clubs", label: "Music Clubs" },
                 { id: "Night Clubs", label: "Night Clubs" },
+                { id: "Pickleball & Racquet Clubs", label: "Pickleball Clubs" },
                 { id: "Private Social Clubs", label: "Private Social Clubs" },
+                { id: "Ski & Snowboard Clubs", label: "Ski Clubs" },
                 { id: "Tennis & Racquet Clubs", label: "Tennis Clubs" },
                 { id: "Travel Clubs", label: "Travel Clubs" },
                 { id: "Women's Clubs", label: "Women's Clubs" },
