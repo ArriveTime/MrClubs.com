@@ -82,6 +82,14 @@
         <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
+    <!-- Video Showcase -->
+    <section class="max-w-7xl mx-auto px-4 py-6 w-full">
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Featured Club Experiences</p>
+        <Carousel>
+          <Video source="youtube" query="exclusive beach clubs and nightlife venue tours" count="3"/>
+        </Carousel>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
         <p class="text-white font-bold text-sm mb-1">MrClubs.com</p>
@@ -118,7 +126,7 @@
                             <option value="Golf Clubs">Golf Clubs</option>
                             <option value="Music Clubs">Music Clubs</option>
                             <option value="Night Clubs">Night Clubs</option>
-                            <option value="Tennis & Racquet Clubs">Tennis & Racquet Clubs</option>
+                            <option value="Tennis & Racquet Clubs">Tennis Clubs</option>
                             <option value="Travel Clubs">Travel Clubs</option>
                             <option value="Yacht Clubs">Yacht Clubs</option>
                         </select>
@@ -180,12 +188,10 @@
                 { name: "Soho Beach House Club", category: "Beach Clubs", city: "Miami Beach", state: "FL", phone: "(305) 555-0199", verified: true, desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." },
                 { name: "Pacific Coast Bike & Cycling Club", category: "Bike Clubs", city: "Santa Monica", state: "CA", phone: "(310) 555-0122", verified: true, desc: "Weekend coastal endurance rides and professional peloton training groups." },
                 { name: "The Metropolitan Dinner Club", category: "Dinner Clubs", city: "Chicago", state: "IL", phone: "(312) 555-0176", verified: true, desc: "Curated monthly epicurean dining experiences featuring Michelin-starred guest chefs." },
-                { name: "The Supper & Epicurean Society", category: "Dinner Clubs", city: "San Francisco", state: "CA", phone: "(415) 555-0111", verified: false, desc: "Private underground culinary gatherings and wine pairings in historic venues." },
                 { name: "Equinox Elite Fitness Club", category: "Fitness Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0155", verified: true, desc: "High-performance fitness club featuring personal training, spa, and rooftop yoga." },
                 { name: "Botanical & Gardening Guild", category: "Gardening Clubs", city: "Williamsburg", state: "VA", phone: "(757) 555-0138", verified: false, desc: "Master gardeners association, greenhouse workshops, and historic estate tours." },
                 { name: "Blue Note Jazz & Music Club", category: "Music Clubs", city: "New York", state: "NY", phone: "(212) 475-8592", verified: true, desc: "Legendary Greenwich Village venue hosting world-class jazz artists and VIP seating." },
                 { name: "XS Nightclub & VIP Lounge", category: "Night Clubs", city: "Las Vegas", state: "NV", phone: "(702) 770-0097", verified: true, desc: "Opulent indoor-outdoor nightlife venue with VIP bottle service and poolside cabanas." },
-                { name: "E11EVEN Ultra Night Club", category: "Night Clubs", city: "Miami", state: "FL", phone: "(305) 829-2911", verified: true, desc: "24-hour immersive nightlife destination offering VIP tables and live entertainment." },
                 { name: "Omnia Rooftop Day Club", category: "Day Clubs", city: "Las Vegas", state: "NV", phone: "(702) 785-6200", verified: true, desc: "Multi-tier daytime pool party and lounge experience overlooking the Las Vegas Strip." },
                 { name: "Jetsetter Global Travel Club", category: "Travel Clubs", city: "Dallas", state: "TX", phone: "(214) 555-0189", verified: true, desc: "Luxury private-jet and chartered expedition club for international explorers." },
                 { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." },
@@ -415,9 +421,8 @@
                     city: document.getElementById("inCity").value.trim(),
                     phone: document.getElementById("inPhone").value.trim() || "(800) 555-0100",
                     verified: true,
-                    desc: document.env ? "" : (document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com.")
+                    desc: document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com."
                 };
-                newEntry.desc = document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com.";
 
                 var foundIdx = -1;
                 for (var i = 0; i < clubs.length; i++) {
