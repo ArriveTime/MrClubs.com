@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrClubs.com — National Club Directory</title>
+    <title>MrClubs.com — National Club Directory (All 50 States)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         .pill-active {
             background-color: #f59e0b !important;
             color: #0f172a !important;
@@ -33,25 +34,25 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                State & Category Directory
+                National Directory • All 50 States
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                Browse Clubs By <span class="text-amber-400">State & Category</span>
+                Browse Clubs Across <span class="text-amber-400">All 50 States</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Click any state below, then pick a club category to view listings immediately.
+                Select your state below, then pick a club category to view exclusive listings instantly.
             </p>
         </div>
     </header>
 
-    <!-- Step 1: State Selector -->
+    <!-- Step 1: State Selector (All 50 States) -->
     <section class="bg-white border-b border-slate-200 py-5 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="flex items-center justify-between mb-2.5">
                 <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">1. Select a State</span>
                 <span id="stateBadge" class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">All States</span>
             </div>
-            <div id="stateBar" class="flex flex-wrap gap-2"></div>
+            <div id="stateBar" class="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto p-1 border border-slate-100 rounded-xl"></div>
         </div>
     </section>
 
@@ -84,7 +85,7 @@
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
         <p class="text-white font-bold text-sm mb-1">MrClubs.com</p>
-        <p>National Directory of Golf, Country, Yacht, Aviation, Social & VIP Clubs.</p>
+        <p>National Directory of Golf, Country, Yacht, Aviation, Social & VIP Clubs across all 50 States.</p>
     </footer>
 
     <!-- Modal -->
@@ -95,10 +96,11 @@
             <h3 id="modalHeading" class="text-xl font-extrabold text-slate-900 mt-2">Add or Claim a Club</h3>
             <p id="modalSub" class="text-xs text-slate-500 mt-1 mb-4">Enter club details below to publish immediately.</p>
 
+            <!-- Optional: add action="https://formspree.io/f/YOUR_ID" method="POST" to route leads to your email -->
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Williamsburg Golf Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Augusta National Golf Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -117,29 +119,23 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="CA">California (CA)</option>
-                            <option value="DC">Washington D.C. (DC)</option>
-                            <option value="FL">Florida (FL)</option>
-                            <option value="NV">Nevada (NV)</option>
-                            <option value="NY">New York (NY)</option>
-                            <option value="TX">Texas (TX)</option>
-                            <option value="VA" selected>Virginia (VA)</option>
+                            <option value="AL">Alabama (AL)</option><option value="AK">Alaska (AK)</option><option value="AZ">Arizona (AZ)</option><option value="AR">Arkansas (AR)</option><option value="CA">California (CA)</option><option value="CO">Colorado (CO)</option><option value="CT">Connecticut (CT)</option><option value="DE">Delaware (DE)</option><option value="DC">Washington D.C. (DC)</option><option value="FL">Florida (FL)</option><option value="GA">Georgia (GA)</option><option value="HI">Hawaii (HI)</option><option value="ID">Idaho (ID)</option><option value="IL">Illinois (IL)</option><option value="IN">Indiana (IN)</option><option value="IA">Iowa (IA)</option><option value="KS">Kansas (KS)</option><option value="KY">Kentucky (KY)</option><option value="LA">Louisiana (LA)</option><option value="ME">Maine (ME)</option><option value="MD">Maryland (MD)</option><option value="MA">Massachusetts (MA)</option><option value="MI">Michigan (MI)</option><option value="MN">Minnesota (MN)</option><option value="MS">Mississippi (MS)</option><option value="MO">Missouri (MO)</option><option value="MT">Montana (MT)</option><option value="NE">Nebraska (NE)</option><option value="NV">Nevada (NV)</option><option value="NH">New Hampshire (NH)</option><option value="NJ">New Jersey (NJ)</option><option value="NM">New Mexico (NM)</option><option value="NY">New York (NY)</option><option value="NC">North Carolina (NC)</option><option value="ND">North Dakota (ND)</option><option value="OH">Ohio (OH)</option><option value="OK">Oklahoma (OK)</option><option value="OR">Oregon (OR)</option><option value="PA">Pennsylvania (PA)</option><option value="RI">Rhode Island (RI)</option><option value="SC">South Carolina (SC)</option><option value="SD">South Dakota (SD)</option><option value="TN">Tennessee (TN)</option><option value="TX">Texas (TX)</option><option value="UT">Utah (UT)</option><option value="VT">Vermont (VT)</option><option value="VA" selected>Virginia (VA)</option><option value="WA">Washington (WA)</option><option value="WV">West Virginia (WV)</option><option value="WI">Wisconsin (WI)</option><option value="WY">Wyoming (WY)</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Williamsburg" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Richmond" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone</label>
-                        <input type="text" id="inPhone" placeholder="(757) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone / Email</label>
+                        <input type="text" id="inPhone" placeholder="contact@club.com" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Championship course, private marina, or social membership..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Description / Inquiry Message</label>
+                    <textarea id="inDesc" rows="2" placeholder="Championship course, private marina, or membership inquiry..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -170,24 +166,12 @@
                 { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." },
                 { name: "Balboa Bay Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 645-5000", verified: true, desc: "Iconic private waterfront club and marina in the heart of Newport Beach." },
                 { name: "Key West Yacht Club", category: "Yacht Clubs", city: "Key West", state: "FL", phone: "(305) 296-3446", verified: false, desc: "Deep-water slips, Gulf-to-Atlantic access, and social events in the Lower Keys." },
-                { name: "Big Pine & Lower Keys Fishing Club", category: "Yacht Clubs", city: "Big Pine Key", state: "FL", phone: "(305) 555-0192", verified: false, desc: "Local anglers, offshore charters, and conservation-minded boaters." },
                 { name: "Omnia VIP Lounge & Nightclub", category: "Nightlife & VIP Clubs", city: "Las Vegas", state: "NV", phone: "(702) 785-6200", verified: true, desc: "Multi-level luxury nightlife venue with rooftop terrace views of the Las Vegas Strip." },
                 { name: "XS Nightclub & VIP Cabanas", category: "Nightlife & VIP Clubs", city: "Las Vegas", state: "NV", phone: "(702) 770-0097", verified: true, desc: "Exclusive poolside and indoor VIP bottle service experience at Encore." },
                 { name: "E11EVEN Miami VIP Club", category: "Nightlife & VIP Clubs", city: "Miami", state: "FL", phone: "(305) 829-2911", verified: true, desc: "24/7 ultraclub offering private table reservations and live theatrical performances." },
-                { name: "Potomac Aviation & Flying Club", category: "Aviation Clubs", city: "Washington", state: "DC", phone: "(202) 555-0148", verified: true, desc: "Private pilots association offering aircraft share access and IFR training." },
-                { name: "Van Nuys Executive Aero Club", category: "Aviation Clubs", city: "Los Angeles", state: "CA", phone: "(818) 555-0174", verified: false, desc: "Community of private aviators, hangar owners, and weekend fly-out enthusiasts." },
-                { name: "Marshall Chess Club", category: "Chess Clubs", city: "New York", state: "NY", phone: "(212) 477-3716", verified: true, desc: "Historic Greenwich Village chess institution hosting rated tournaments and lectures." },
-                { name: "Capital City Chess & Strategy Club", category: "Chess Clubs", city: "Washington", state: "DC", phone: "(202) 555-0119", verified: false, desc: "Weekly rapid tournaments, casual blitz nights, and scholastic coaching." },
-                { name: "Carnegie Club Cigar & Jazz Lounge", category: "Cigar Clubs", city: "New York", state: "NY", phone: "(212) 957-9676", verified: true, desc: "Classic mahogany-lined lounge featuring rare cigars, single malts, and live music." },
-                { name: "Grand Havana Room", category: "Cigar Clubs", city: "Beverly Hills", state: "CA", phone: "(310) 276-4200", verified: true, desc: "Private members-only cigar club with custom humidors and panoramic city views." },
-                { name: "Georgetown Literary & Book Club", category: "Book Clubs", city: "Washington", state: "DC", phone: "(202) 555-0161", verified: false, desc: "Monthly history, biography, and classic fiction discussions in Georgetown." },
-                { name: "Williamsburg Historical Book Society", category: "Book Clubs", city: "Williamsburg", state: "VA", phone: "(757) 555-0133", verified: false, desc: "Exploring American founding history, modern thrillers, and guest author talks." },
-                { name: "Southern California Classics Book Club", category: "Book Clubs", city: "Laguna Beach", state: "CA", phone: "(949) 555-0181", verified: false, desc: "Coastal reading group meeting monthly at local cafes and galleries." },
-                { name: "River Oaks Country Club", category: "Country Clubs", city: "Houston", state: "TX", phone: "(713) 529-4321", verified: true, desc: "Distinguished Houston private club with championship golf and tennis facilities." },
-                { name: "Austin Lakefront Yacht & Sailing Club", category: "Yacht Clubs", city: "Austin", state: "TX", phone: "(512) 555-0155", verified: false, desc: "Keelboat racing, junior sailing programs, and Lake Travis regattas." },
-                { name: "Shadow Creek Golf Club", category: "Golf Clubs", city: "Las Vegas", state: "NV", phone: "(702) 399-7111", verified: true, desc: "World-renowned Tom Fazio desert oasis golf experience." },
-                { name: "Boca Raton Beach & Country Club", category: "Country Clubs", city: "Boca Raton", state: "FL", phone: "(561) 447-3000", verified: true, desc: "Oceanfront private club lifestyle with championship golf and private beach access." },
-                { name: "Metropolitan Club of Washington", category: "Country Clubs", city: "Washington", state: "DC", phone: "(202) 835-2500", verified: true, desc: "Historic private social and dining club located two blocks from the White House." }
+                { name: "Augusta National Golf Club", category: "Golf Clubs", city: "Augusta", state: "GA", phone: "(706) 667-6000", verified: true, desc: "World-famous home of the Masters Tournament and elite private membership." },
+                { name: "Dallas Petroleum Club", category: "Country Clubs", city: "Dallas", state: "TX", phone: "(214) 871-1500", verified: true, desc: "Historic executive dining and social club in downtown Dallas." },
+                { name: "Chicago Yacht Club", category: "Yacht Clubs", city: "Chicago", state: "IL", phone: "(312) 861-7777", verified: true, desc: "Premier freshwater yachting institution on Lake Michigan." }
             ];
 
             var activeState = "";
@@ -195,13 +179,19 @@
 
             var stateList = [
                 { code: "", label: "All States" },
-                { code: "VA", label: "Virginia" },
-                { code: "CA", label: "California" },
-                { code: "FL", label: "Florida" },
-                { code: "DC", label: "Washington D.C." },
-                { code: "NV", label: "Nevada" },
-                { code: "NY", label: "New York" },
-                { code: "TX", label: "Texas" }
+                { code: "AL", label: "Alabama" }, { code: "AK", label: "Alaska" }, { code: "AZ", label: "Arizona" }, { code: "AR", label: "Arkansas" },
+                { code: "CA", label: "California" }, { code: "CO", label: "Colorado" }, { code: "CT", label: "Connecticut" }, { code: "DE", label: "Delaware" },
+                { code: "DC", label: "Washington D.C." }, { code: "FL", label: "Florida" }, { code: "GA", label: "Georgia" }, { code: "HI", label: "Hawaii" },
+                { code: "ID", label: "Idaho" }, { code: "IL", label: "Illinois" }, { code: "IN", label: "Indiana" }, { code: "IA", label: "Iowa" },
+                { code: "KS", label: "Kansas" }, { code: "KY", label: "Kentucky" }, { code: "LA", label: "Louisiana" }, { code: "ME", label: "Maine" },
+                { code: "MD", label: "Maryland" }, { code: "MA", label: "Massachusetts" }, { code: "MI", label: "Michigan" }, { code: "MN", label: "Minnesota" },
+                { code: "MS", label: "Mississippi" }, { code: "MO", label: "Missouri" }, { code: "MT", label: "Montana" }, { code: "NE", label: "Nebraska" },
+                { code: "NV", label: "Nevada" }, { code: "NH", label: "New Hampshire" }, { code: "NJ", label: "New Jersey" }, { code: "NM", label: "New Mexico" },
+                { code: "NY", label: "New York" }, { code: "NC", label: "North Carolina" }, { code: "ND", label: "North Dakota" }, { code: "OH", label: "Ohio" },
+                { code: "OK", label: "Oklahoma" }, { code: "OR", label: "Oregon" }, { code: "PA", label: "Pennsylvania" }, { code: "RI", label: "Rhode Island" },
+                { code: "SC", label: "South Carolina" }, { code: "SD", label: "South Dakota" }, { code: "TN", label: "Tennessee" }, { code: "TX", label: "Texas" },
+                { code: "UT", label: "Utah" }, { code: "VT", label: "Vermont" }, { code: "VA", label: "Virginia" }, { code: "WA", label: "Washington" },
+                { code: "WV", label: "West Virginia" }, { code: "WI", label: "Wisconsin" }, { code: "WY", label: "Wyoming" }
             ];
 
             var catList = [
@@ -228,7 +218,7 @@
                     var btn = document.createElement("button");
                     btn.type = "button";
                     btn.textContent = st.label;
-                    btn.className = "st-btn px-3.5 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (st.code === "" ? " pill-active" : "");
+                    btn.className = "st-btn px-2.5 py-1.5 rounded text-[11px] font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (st.code === "" ? " pill-active" : "");
                     btn.onclick = function () {
                         activeState = st.code;
                         var allSt = document.querySelectorAll(".st-btn");
@@ -247,7 +237,7 @@
                     var btn = document.createElement("button");
                     btn.type = "button";
                     btn.textContent = ct.label;
-                    btn.className = "ct-btn px-3.5 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (ct.id === "" ? " pill-active" : "");
+                    btn.className = "ct-btn px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (ct.id === "" ? " pill-active" : "");
                     btn.onclick = function () {
                         activeCategory = ct.id;
                         var allCt = document.querySelectorAll(".ct-btn");
@@ -275,7 +265,7 @@
                 if (filtered.length === 0) {
                     var empty = document.createElement("div");
                     empty.className = "col-span-full bg-white border border-slate-200 rounded-xl p-10 text-center";
-                    empty.innerHTML = '<p class="font-bold text-slate-800 text-lg">No clubs listed in this State + Category yet.</p><p class="text-sm text-slate-500 mt-1 mb-4">Click below to add the first club here.</p>';
+                    empty.innerHTML = '<p class="font-bold text-slate-800 text-lg">No clubs listed in this State + Category yet.</p><p class="text-sm text-slate-500 mt-1 mb-4">Be the first to add a club here!</p>';
                     var addEmptyBtn = document.createElement("button");
                     addEmptyBtn.type = "button";
                     addEmptyBtn.textContent = "+ Add a Club Here";
@@ -418,6 +408,7 @@
                 closeModal();
                 document.getElementById("entryForm").reset();
                 resetFilters();
+                alert("Success! Your submission has been recorded.");
             };
 
             // Initial Render
