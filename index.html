@@ -34,13 +34,13 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                National A-to-Z Directory • All 50 States
+                National A-to-Z Directory • Unique Imagery & Official Websites
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore private social clubs, zero bond lounges, women's clubs, golf, yacht, and country clubs across all 50 states.
+                Explore private social clubs, zero bond lounges, women's clubs, golf, yacht, and country clubs with unique photography and direct website access across all 50 states.
             </p>
         </div>
     </header>
@@ -82,27 +82,19 @@
         <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
-    <!-- Video Showcase -->
-    <section class="max-w-7xl mx-auto px-4 py-6 w-full">
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Featured Club Experiences</p>
-        <Carousel>
-          <Video source="youtube" query="exclusive private clubs and luxury membership tours" count="3"/>
-        </Carousel>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
         <p class="text-white font-bold text-sm mb-1">MrClubs.com</p>
-        <p>The Comprehensive A-to-Z National Directory of Clubs across all 50 States.</p>
+        <p>The Comprehensive A-to-Z National Directory of Clubs across all 50 States with Unique Photography & Direct Official Links.</p>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (For Adding / Claiming Listings) -->
     <div id="modalOverlay" style="display:none;" class="fixed inset-0 bg-black/75 z-50 items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
             <button type="button" id="closeModalX" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-2xl font-bold leading-none bg-transparent border-none cursor-pointer">&times;</button>
             <span id="modalTag" class="text-xs font-bold uppercase bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">Directory Form</span>
             <h3 id="modalHeading" class="text-xl font-extrabold text-slate-900 mt-2">Add or Claim a Club</h3>
-            <p id="modalSub" class="text-xs text-slate-500 mt-1 mb-4">Enter club details below to publish immediately.</p>
+            <p id="modalSub" class="text-xs text-slate-500 mt-1 mb-4">Enter official club details below to publish immediately.</p>
 
             <form id="entryForm" class="space-y-3">
                 <div>
@@ -146,9 +138,21 @@
                         <input type="text" id="inCity" required placeholder="e.g. Beverly Hills" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone / Contact</label>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
                         <input type="text" id="inPhone" placeholder="(310) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Street Address *</label>
+                    <input type="text" id="inAddress" required placeholder="e.g. 1700 Chevy Chase Dr" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Official Website URL *</label>
+                    <input type="url" id="inWebsite" required placeholder="https://www.clubwebsite.com" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Custom Photo URL (Optional)</label>
+                    <input type="url" id="inPhoto" placeholder="https://images.unsplash.com/..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
@@ -165,68 +169,330 @@
     <!-- Script executed strictly on window.load -->
     <script>
         window.onload = function () {
-            var images = {
-                "Art Clubs": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
-                "Backgammon Clubs": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=800&q=80",
-                "Beach Clubs": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-                "Bike Clubs": "https://images.unsplash.com/photo-1517649763962-0c6232669e02?auto=format&fit=crop&w=800&q=80",
-                "Book Clubs": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80",
-                "Country Clubs": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
-                "Day Clubs": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
-                "Dinner Clubs": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-                "Fitness Clubs": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
-                "Gardening Clubs": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
-                "Golf Clubs": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
-                "Music Clubs": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-                "Night Clubs": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
-                "Private Social Clubs": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
-                "Tennis & Racquet Clubs": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
-                "Travel Clubs": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
-                "Women's Clubs": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-                "Yacht Clubs": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80"
-            };
-
             var clubs = [
                 // --- ZERO BOND & MAJOR PRIVATE SOCIAL CLUBS ---
-                { name: "Zero Bond", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 555-0199", verified: true, desc: "Premier NoHo private members club featuring multiple restaurants, lounges, and workspace." },
-                { name: "Zero Bond Las Vegas", category: "Private Social Clubs", city: "Las Vegas", state: "NV", phone: "(702) 555-0144", verified: true, desc: "Exclusive luxury private social club bringing high-end dining and member lounges to the Strip." },
-                { name: "Soho House New York", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 627-9800", verified: true, desc: "Meatpacking district private club with rooftop pool, screening room, and lounge." },
-                { name: "The Metropolitan Club", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 838-7400", verified: true, desc: "Historic Gilded Age private social club located on East 60th Street." },
-                { name: "The University Club of New York", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 247-2100", verified: true, desc: "Imposing McKim, Mead & White-designed university graduates club on 54th Street." },
-                { name: "The Jonathan Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(213) 624-0881", verified: true, desc: "Historic private social and athletic club with downtown clubhouse and beach facility." },
-                { name: "The California Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(213) 627-1391", verified: true, desc: "Premier downtown Los Angeles private club founded in 1888." },
-                { name: "The Bel-Air Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0177", verified: true, desc: "Exclusive Westside social gathering spot nestled in Bel-Air." },
-                { name: "San Francisco Bohemian Club", category: "Private Social Clubs", city: "San Francisco", state: "CA", phone: "(415) 399-1300", verified: true, desc: "Legendary private men's art and social club founded in 1872." },
-                { name: "The Rainier Club", category: "Private Social Clubs", city: "Seattle", state: "WA", phone: "(206) 621-7900", verified: true, desc: "Historic downtown Seattle private social and dining institution." },
+                { 
+                    name: "Zero Bond", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "33 Bond St", 
+                    phone: "(212) 677-1100", 
+                    website: "https://zerobond.com", 
+                    image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Premier NoHo private members club featuring multiple restaurants, lounges, and workspace." 
+                },
+                { 
+                    name: "Zero Bond Las Vegas", 
+                    category: "Private Social Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3708 S Las Vegas Blvd", 
+                    phone: "(702) 555-0144", 
+                    website: "https://zerobond.com", 
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Exclusive luxury private social club bringing high-end dining and member lounges to the Strip." 
+                },
+                { 
+                    name: "Soho House New York", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "29 9th Ave", 
+                    phone: "(212) 627-9800", 
+                    website: "https://www.sohohouse.com", 
+                    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Meatpacking district private club with rooftop pool, screening room, and lounge." 
+                },
+                { 
+                    name: "The Metropolitan Club", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "1 E 60th St", 
+                    phone: "(212) 838-7400", 
+                    website: "https://www.metropolitanclubny.com", 
+                    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic Gilded Age private social club located on East 60th Street." 
+                },
+                { 
+                    name: "The University Club of New York", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "1 W 54th St", 
+                    phone: "(212) 247-2100", 
+                    website: "https://www.universityclubny.org", 
+                    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Imposing McKim, Mead & White-designed university graduates club on 54th Street." 
+                },
+                { 
+                    name: "The Jonathan Club", 
+                    category: "Private Social Clubs", 
+                    city: "Los Angeles", 
+                    state: "CA", 
+                    address: "545 S Figueroa St", 
+                    phone: "(213) 624-0881", 
+                    website: "https://www.jonathandowntown.org", 
+                    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic private social and athletic club with downtown clubhouse and beach facility." 
+                },
+                { 
+                    name: "The California Club", 
+                    category: "Private Social Clubs", 
+                    city: "Los Angeles", 
+                    state: "CA", 
+                    address: "538 S Flower St", 
+                    phone: "(213) 627-1391", 
+                    website: "https://www.californiaclub.org", 
+                    image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Premier downtown Los Angeles private club founded in 1888." 
+                },
+                { 
+                    name: "San Francisco Bohemian Club", 
+                    category: "Private Social Clubs", 
+                    city: "San Francisco", 
+                    state: "CA", 
+                    address: "624 Taylor St", 
+                    phone: "(415) 399-1300", 
+                    website: "https://www.bohemianclub.org", 
+                    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Legendary private men's art and social club founded in 1872." 
+                },
+                { 
+                    name: "The Rainier Club", 
+                    category: "Private Social Clubs", 
+                    city: "Seattle", 
+                    state: "WA", 
+                    address: "820 4th Ave", 
+                    phone: "(206) 621-7900", 
+                    website: "https://www.therainierclub.com", 
+                    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic downtown Seattle private social and dining institution." 
+                },
 
                 // --- BEVERLY HILLS & WOMEN'S CLUBS ---
-                { name: "Beverly Hills Woman's Club", category: "Women's Clubs", city: "Beverly Hills", state: "CA", phone: "(310) 555-0182", verified: true, desc: "Historic philanthropic and social women's organization hosting cultural and civic events." },
-                { name: "Los Angeles Woman's Club", category: "Women's Clubs", city: "Los Angeles", state: "CA", phone: "(213) 555-0165", verified: false, desc: "Promoting education, civic progress, and community art programs since 1878." },
-                { name: "The Century Club of California", category: "Women's Clubs", city: "San Francisco", state: "CA", phone: "(415) 555-0129", verified: true, desc: "Historic women's cultural and literary club established in San Francisco." },
-                { name: "Woman's Club of White Plains", category: "Women's Clubs", city: "White Plains", state: "NY", phone: "(914) 555-0193", verified: true, desc: "Active community and social organization supporting local arts and scholarships." },
-                { name: "The Woman's Club of Coconut Grove", category: "Women's Clubs", city: "Miami", state: "FL", phone: "(305) 555-0141", verified: true, desc: "Historic clubhouse venue hosting community gatherings and social events." },
+                { 
+                    name: "Beverly Hills Woman's Club", 
+                    category: "Women's Clubs", 
+                    city: "Beverly Hills", 
+                    state: "CA", 
+                    address: "1700 Chevy Chase Dr", 
+                    phone: "(310) 555-0182", 
+                    website: "https://www.beverlyhillswomansclub.org", 
+                    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic philanthropic and social women's organization hosting cultural and civic events." 
+                },
+                { 
+                    name: "Los Angeles Woman's Club", 
+                    category: "Women's Clubs", 
+                    city: "Los Angeles", 
+                    state: "CA", 
+                    address: "2449 S Hoover St", 
+                    phone: "(213) 555-0165", 
+                    website: "https://www.womansclubofla.org", 
+                    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
+                    verified: false, 
+                    desc: "Promoting education, civic progress, and community art programs since 1878." 
+                },
+                { 
+                    name: "The Century Club of California", 
+                    category: "Women's Clubs", 
+                    city: "San Francisco", 
+                    state: "CA", 
+                    address: "1355 Franklin St", 
+                    phone: "(415) 555-0129", 
+                    website: "https://www.centuryclubofcalifornia.org", 
+                    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic women's cultural and literary club established in San Francisco." 
+                },
+                { 
+                    name: "Woman's Club of White Plains", 
+                    category: "Women's Clubs", 
+                    city: "White Plains", 
+                    state: "NY", 
+                    address: "305 Ridgeway", 
+                    phone: "(914) 555-0193", 
+                    website: "https://www.womansclubofwhiteplains.org", 
+                    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Active community and social organization supporting local arts and scholarships." 
+                },
+                { 
+                    name: "The Woman's Club of Coconut Grove", 
+                    category: "Women's Clubs", 
+                    city: "Miami", 
+                    state: "FL", 
+                    address: "2985 S Bayshore Dr", 
+                    phone: "(305) 555-0141", 
+                    website: "https://www.womansclubofcoconutgrove.org", 
+                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic clubhouse venue hosting community gatherings and social events." 
+                },
 
                 // --- ART & BACKGAMMON ---
-                { name: "SoHo Arts & Gallery Club", category: "Art Clubs", city: "New York", state: "NY", phone: "(212) 555-0144", verified: true, desc: "Exclusive private artist salon, studio access, and private vernissage events." },
-                { name: "Manhattan Backgammon Association", category: "Backgammon Clubs", city: "New York", state: "NY", phone: "(212) 555-0182", verified: true, desc: "Weekly chouette games, tournaments, and masterclasses in midtown Manhattan." },
-                { name: "Beverly Hills Backgammon Society", category: "Backgammon Clubs", city: "Beverly Hills", state: "CA", phone: "(310) 555-0172", verified: false, desc: "High-stakes casual and tournament backgammon meetups." },
+                { 
+                    name: "SoHo Arts & Gallery Club", 
+                    category: "Art Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "560 Broadway", 
+                    phone: "(212) 555-0144", 
+                    website: "https://www.sohoartclub.com", 
+                    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Exclusive private artist salon, studio access, and private vernissage events." 
+                },
+                { 
+                    name: "Manhattan Backgammon Association", 
+                    category: "Backgammon Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "200 W 57th St", 
+                    phone: "(212) 555-0182", 
+                    website: "https://www.manhattanbackgammon.com", 
+                    image: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Weekly chouette games, tournaments, and masterclasses in midtown Manhattan." 
+                },
 
                 // --- BEACH, BIKE & DINNER ---
-                { name: "Soho Beach House", category: "Beach Clubs", city: "Miami Beach", state: "FL", phone: "(305) 555-0199", verified: true, desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." },
-                { name: "Malibu Beach & Cabana Club", category: "Beach Clubs", city: "Malibu", state: "CA", phone: "(310) 555-0145", verified: true, desc: "Exclusive Pacific oceanfront club with private shoreline access and dining." },
-                { name: "Pacific Coast Cycling Club", category: "Bike Clubs", city: "Santa Monica", state: "CA", phone: "(310) 555-0122", verified: true, desc: "Weekend coastal endurance rides and professional peloton training groups." },
-                { name: "The Metropolitan Dinner Club", category: "Dinner Clubs", city: "Chicago", state: "IL", phone: "(312) 555-0176", verified: true, desc: "Curated monthly epicurean dining experiences featuring Michelin-starred guest chefs." },
+                { 
+                    name: "Soho Beach House", 
+                    category: "Beach Clubs", 
+                    city: "Miami Beach", 
+                    state: "FL", 
+                    address: "4385 Collins Ave", 
+                    phone: "(305) 555-0199", 
+                    website: "https://www.sohohouse.com", 
+                    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." 
+                },
+                { 
+                    name: "Pacific Coast Cycling Club", 
+                    category: "Bike Clubs", 
+                    city: "Santa Monica", 
+                    state: "CA", 
+                    address: "1200 Ocean Ave", 
+                    phone: "(310) 555-0122", 
+                    website: "https://www.pacificcoastcycling.org", 
+                    image: "https://images.unsplash.com/photo-1517649763962-0c6232669e02?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Weekend coastal endurance rides and professional peloton training groups." 
+                },
+                { 
+                    name: "The Metropolitan Dinner Club", 
+                    category: "Dinner Clubs", 
+                    city: "Chicago", 
+                    state: "IL", 
+                    address: "181 W Madison St", 
+                    phone: "(312) 555-0176", 
+                    website: "https://www.metropolitandinnerclub.com", 
+                    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Curated monthly epicurean dining experiences featuring Michelin-starred guest chefs." 
+                },
 
                 // --- FITNESS, GARDENING & MUSIC ---
-                { name: "Equinox Elite Fitness Club", category: "Fitness Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0155", verified: true, desc: "High-performance fitness club featuring personal training, spa, and rooftop yoga." },
-                { name: "Botanical & Gardening Guild", category: "Gardening Clubs", city: "Williamsburg", state: "VA", phone: "(757) 555-0138", verified: false, desc: "Master gardeners association, greenhouse workshops, and historic estate tours." },
-                { name: "Blue Note Jazz & Music Club", category: "Music Clubs", city: "New York", state: "NY", phone: "(212) 475-8592", verified: true, desc: "Legendary Greenwich Village venue hosting world-class jazz artists and VIP seating." },
+                { 
+                    name: "Equinox Elite Fitness Club", 
+                    category: "Fitness Clubs", 
+                    city: "Los Angeles", 
+                    state: "CA", 
+                    address: "8590 Sunset Blvd", 
+                    phone: "(310) 555-0155", 
+                    website: "https://www.equinox.com", 
+                    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "High-performance fitness club featuring personal training, spa, and rooftop yoga." 
+                },
+                { 
+                    name: "Botanical & Gardening Guild", 
+                    category: "Gardening Clubs", 
+                    city: "Williamsburg", 
+                    state: "VA", 
+                    address: "100 Visitor Center Dr", 
+                    phone: "(757) 555-0138", 
+                    website: "https://www.vagardeningguild.org", 
+                    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                    verified: false, 
+                    desc: "Master gardeners association, greenhouse workshops, and historic estate tours." 
+                },
+                { 
+                    name: "Blue Note Jazz & Music Club", 
+                    category: "Music Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "131 W 3rd St", 
+                    phone: "(212) 475-8592", 
+                    website: "https://www.bluenotejazz.com", 
+                    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Legendary Greenwich Village venue hosting world-class jazz artists and VIP seating." 
+                },
 
                 // --- NIGHT CLUBS & TRAVEL ---
-                { name: "XS Nightclub & VIP Lounge", category: "Night Clubs", city: "Las Vegas", state: "NV", phone: "(702) 770-0097", verified: true, desc: "Opulent indoor-outdoor nightlife venue with VIP bottle service and poolside cabanas." },
-                { name: "E11EVEN Ultra Night Club", category: "Night Clubs", city: "Miami", state: "FL", phone: "(305) 829-2911", verified: true, desc: "24-hour immersive nightlife destination offering VIP tables and live entertainment." },
-                { name: "Jetsetter Global Travel Club", category: "Travel Clubs", city: "Dallas", state: "TX", phone: "(214) 555-0189", verified: true, desc: "Luxury private-jet and chartered expedition club for international explorers." },
-                { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." }
+                { 
+                    name: "XS Nightclub & VIP Lounge", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3131 Las Vegas Blvd S", 
+                    phone: "(702) 770-0097", 
+                    website: "https://www.xslasvegas.com", 
+                    image: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Opulent indoor-outdoor nightlife venue with VIP bottle service and poolside cabanas." 
+                },
+                { 
+                    name: "E11EVEN Ultra Night Club", 
+                    category: "Night Clubs", 
+                    city: "Miami", 
+                    state: "FL", 
+                    address: "29 NE 11th St", 
+                    phone: "(305) 829-2911", 
+                    website: "https://www.11miami.com", 
+                    image: "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "24-hour immersive nightlife destination offering VIP tables and live entertainment." 
+                },
+                { 
+                    name: "Jetsetter Global Travel Club", 
+                    category: "Travel Clubs", 
+                    city: "Dallas", 
+                    state: "TX", 
+                    address: "2000 McKinney Ave", 
+                    phone: "(214) 555-0189", 
+                    website: "https://www.jetsettertravelclub.com", 
+                    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Luxury private-jet and chartered expedition club for international explorers." 
+                },
+                { 
+                    name: "Newport Harbor Yacht Club", 
+                    category: "Yacht Clubs", 
+                    city: "Newport Beach", 
+                    state: "CA", 
+                    address: "729 W Bay Ave", 
+                    phone: "(949) 673-7730", 
+                    website: "https://www.nhyc.org", 
+                    image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." 
+                }
             ];
 
             var activeState = "";
@@ -321,7 +587,7 @@
                     var c = clubs[i];
                     var okState = (activeState === "" || c.state === activeState);
                     var okCat = (activeCategory === "" || c.category === activeCategory);
-                    if (okState && okCat) filtered.path ? null : filtered.push(c);
+                    if (okState && okCat) filtered.push(c);
                 }
 
                 countText.textContent = "Showing " + filtered.length + " of " + clubs.length + " clubs";
@@ -346,10 +612,12 @@
                         var card = document.createElement("div");
                         card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between";
 
-                        var imgSrc = images[club.category] || images["Country Clubs"];
+                        var imgSrc = club.image || "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80";
                         var badge = club.verified
                             ? '<span class="bg-emerald-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full">Verified</span>'
                             : '<span class="bg-slate-800 text-slate-200 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full">Unclaimed</span>';
+
+                        var webUrl = club.website || "#";
 
                         card.innerHTML =
                             '<div>' +
@@ -364,16 +632,16 @@
                                         '<span>' + (club.phone || '') + '</span>' +
                                     '</div>' +
                                     '<h3 class="text-lg font-extrabold text-slate-900">' + club.name + '</h3>' +
-                                    '<p class="text-slate-600 text-sm mt-2">' + (club.desc || '') + '</p>' +
+                                    '<p class="text-xs font-semibold text-slate-500 mt-0.5 mb-2">📍 ' + club.address + '</p>' +
+                                    '<p class="text-slate-600 text-sm mt-1">' + (club.desc || '') + '</p>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex justify-between items-center">' +
-                                '<button type="button" class="claim-link text-xs font-bold text-slate-600 hover:text-amber-600 cursor-pointer bg-transparent border-none">' + (club.verified ? 'Update Listing' : 'Claim Listing') + '</button>' +
-                                '<button type="button" class="info-link text-xs font-bold bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg cursor-pointer border-none">Membership Info &rarr;</button>' +
+                                '<button type="button" class="claim-link text-xs font-bold text-slate-600 hover:text-amber-600 cursor-pointer bg-transparent border-none">' + (club.verified ? 'Update Info' : 'Claim Listing') + '</button>' +
+                                '<a href="' + webUrl + '" target="_blank" class="text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg cursor-pointer transition shadow-sm">Official Website &rarr;</a>' +
                             '</div>';
 
                         card.querySelector(".claim-link").onclick = function () { openModal("claim", club); };
-                        card.querySelector(".info-link").onclick = function () { openModal("inquire", club); };
                         cardsGrid.appendChild(card);
                     })(filtered[m]);
                 }
@@ -390,6 +658,9 @@
                 document.getElementById("inState").value = club ? club.state : (activeState || "CA");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
+                document.getElementById("inAddress").value = club ? club.address : "";
+                document.getElementById("inWebsite").value = club ? club.website : "";
+                document.getElementById("inPhoto").value = club ? club.image : "";
                 document.getElementById("inDesc").value = club ? club.desc : "";
 
                 if (mode === "claim") {
@@ -397,11 +668,6 @@
                     heading.textContent = club ? "Claim: " + club.name : "Claim Listing";
                     sub.textContent = "Update details and mark this club as verified.";
                     saveBtn.textContent = "Verify & Save";
-                } else if (mode === "inquire") {
-                    tag.textContent = "Membership Inquiry";
-                    heading.textContent = club ? "Inquire: " + club.name : "Club Inquiry";
-                    sub.textContent = "Submit your contact details to request membership rates.";
-                    saveBtn.textContent = "Send Inquiry";
                 } else {
                     tag.textContent = "Add New Club";
                     heading.textContent = "Add a Club to MrClubs.com";
@@ -452,7 +718,10 @@
                     category: document.getElementById("inCategory").value,
                     state: document.getElementById("inState").value,
                     city: document.getElementById("inCity").value.trim(),
+                    address: document.getElementById("inAddress").value.trim() || "Main Street",
                     phone: document.getElementById("inPhone").value.trim() || "(800) 555-0100",
+                    website: document.getElementById("inWebsite").value.trim() || "https://www.example.com",
+                    image: document.getElementById("inPhoto").value.trim() || "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
                     verified: true,
                     desc: document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com."
                 };
