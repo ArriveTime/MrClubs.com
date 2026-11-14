@@ -40,7 +40,7 @@
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore art clubs, beach clubs, dinner clubs, night clubs, travel clubs, and more across all 50 states.
+                Explore private social clubs, zero bond lounges, women's clubs, golf, yacht, and country clubs across all 50 states.
             </p>
         </div>
     </header>
@@ -86,7 +86,7 @@
     <section class="max-w-7xl mx-auto px-4 py-6 w-full">
         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Featured Club Experiences</p>
         <Carousel>
-          <Video source="youtube" query="exclusive beach clubs and nightlife venue tours" count="3"/>
+          <Video source="youtube" query="exclusive private clubs and luxury membership tours" count="3"/>
         </Carousel>
     </section>
 
@@ -107,7 +107,7 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Coastal Beach Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Zero Bond" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -115,7 +115,7 @@
                         <select id="inCategory" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                             <option value="Art Clubs">Art Clubs</option>
                             <option value="Backgammon Clubs">Backgammon Clubs</option>
-                            <option value="Beach Clubs" selected>Beach Clubs</option>
+                            <option value="Beach Clubs">Beach Clubs</option>
                             <option value="Bike Clubs">Bike Clubs</option>
                             <option value="Book Clubs">Book Clubs</option>
                             <option value="Country Clubs">Country Clubs</option>
@@ -126,26 +126,28 @@
                             <option value="Golf Clubs">Golf Clubs</option>
                             <option value="Music Clubs">Music Clubs</option>
                             <option value="Night Clubs">Night Clubs</option>
+                            <option value="Private Social Clubs" selected>Private Social Clubs</option>
                             <option value="Tennis & Racquet Clubs">Tennis Clubs</option>
                             <option value="Travel Clubs">Travel Clubs</option>
+                            <option value="Women's Clubs">Women's Clubs</option>
                             <option value="Yacht Clubs">Yacht Clubs</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL" selected>FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA" selected>CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Miami" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Beverly Hills" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone / Contact</label>
-                        <input type="text" id="inPhone" placeholder="(305) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(310) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
@@ -177,25 +179,54 @@
                 "Golf Clubs": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
                 "Music Clubs": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
                 "Night Clubs": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
+                "Private Social Clubs": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
                 "Tennis & Racquet Clubs": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
                 "Travel Clubs": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
+                "Women's Clubs": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
                 "Yacht Clubs": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80"
             };
 
             var clubs = [
+                // --- ZERO BOND & MAJOR PRIVATE SOCIAL CLUBS ---
+                { name: "Zero Bond", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 555-0199", verified: true, desc: "Premier NoHo private members club featuring multiple restaurants, lounges, and workspace." },
+                { name: "Zero Bond Las Vegas", category: "Private Social Clubs", city: "Las Vegas", state: "NV", phone: "(702) 555-0144", verified: true, desc: "Exclusive luxury private social club bringing high-end dining and member lounges to the Strip." },
+                { name: "Soho House New York", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 627-9800", verified: true, desc: "Meatpacking district private club with rooftop pool, screening room, and lounge." },
+                { name: "The Metropolitan Club", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 838-7400", verified: true, desc: "Historic Gilded Age private social club located on East 60th Street." },
+                { name: "The University Club of New York", category: "Private Social Clubs", city: "New York", state: "NY", phone: "(212) 247-2100", verified: true, desc: "Imposing McKim, Mead & White-designed university graduates club on 54th Street." },
+                { name: "The Jonathan Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(213) 624-0881", verified: true, desc: "Historic private social and athletic club with downtown clubhouse and beach facility." },
+                { name: "The California Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(213) 627-1391", verified: true, desc: "Premier downtown Los Angeles private club founded in 1888." },
+                { name: "The Bel-Air Club", category: "Private Social Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0177", verified: true, desc: "Exclusive Westside social gathering spot nestled in Bel-Air." },
+                { name: "San Francisco Bohemian Club", category: "Private Social Clubs", city: "San Francisco", state: "CA", phone: "(415) 399-1300", verified: true, desc: "Legendary private men's art and social club founded in 1872." },
+                { name: "The Rainier Club", category: "Private Social Clubs", city: "Seattle", state: "WA", phone: "(206) 621-7900", verified: true, desc: "Historic downtown Seattle private social and dining institution." },
+
+                // --- BEVERLY HILLS & WOMEN'S CLUBS ---
+                { name: "Beverly Hills Woman's Club", category: "Women's Clubs", city: "Beverly Hills", state: "CA", phone: "(310) 555-0182", verified: true, desc: "Historic philanthropic and social women's organization hosting cultural and civic events." },
+                { name: "Los Angeles Woman's Club", category: "Women's Clubs", city: "Los Angeles", state: "CA", phone: "(213) 555-0165", verified: false, desc: "Promoting education, civic progress, and community art programs since 1878." },
+                { name: "The Century Club of California", category: "Women's Clubs", city: "San Francisco", state: "CA", phone: "(415) 555-0129", verified: true, desc: "Historic women's cultural and literary club established in San Francisco." },
+                { name: "Woman's Club of White Plains", category: "Women's Clubs", city: "White Plains", state: "NY", phone: "(914) 555-0193", verified: true, desc: "Active community and social organization supporting local arts and scholarships." },
+                { name: "The Woman's Club of Coconut Grove", category: "Women's Clubs", city: "Miami", state: "FL", phone: "(305) 555-0141", verified: true, desc: "Historic clubhouse venue hosting community gatherings and social events." },
+
+                // --- ART & BACKGAMMON ---
                 { name: "SoHo Arts & Gallery Club", category: "Art Clubs", city: "New York", state: "NY", phone: "(212) 555-0144", verified: true, desc: "Exclusive private artist salon, studio access, and private vernissage events." },
                 { name: "Manhattan Backgammon Association", category: "Backgammon Clubs", city: "New York", state: "NY", phone: "(212) 555-0182", verified: true, desc: "Weekly chouette games, tournaments, and masterclasses in midtown Manhattan." },
-                { name: "Soho Beach House Club", category: "Beach Clubs", city: "Miami Beach", state: "FL", phone: "(305) 555-0199", verified: true, desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." },
-                { name: "Pacific Coast Bike & Cycling Club", category: "Bike Clubs", city: "Santa Monica", state: "CA", phone: "(310) 555-0122", verified: true, desc: "Weekend coastal endurance rides and professional peloton training groups." },
+                { name: "Beverly Hills Backgammon Society", category: "Backgammon Clubs", city: "Beverly Hills", state: "CA", phone: "(310) 555-0172", verified: false, desc: "High-stakes casual and tournament backgammon meetups." },
+
+                // --- BEACH, BIKE & DINNER ---
+                { name: "Soho Beach House", category: "Beach Clubs", city: "Miami Beach", state: "FL", phone: "(305) 555-0199", verified: true, desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." },
+                { name: "Malibu Beach & Cabana Club", category: "Beach Clubs", city: "Malibu", state: "CA", phone: "(310) 555-0145", verified: true, desc: "Exclusive Pacific oceanfront club with private shoreline access and dining." },
+                { name: "Pacific Coast Cycling Club", category: "Bike Clubs", city: "Santa Monica", state: "CA", phone: "(310) 555-0122", verified: true, desc: "Weekend coastal endurance rides and professional peloton training groups." },
                 { name: "The Metropolitan Dinner Club", category: "Dinner Clubs", city: "Chicago", state: "IL", phone: "(312) 555-0176", verified: true, desc: "Curated monthly epicurean dining experiences featuring Michelin-starred guest chefs." },
+
+                // --- FITNESS, GARDENING & MUSIC ---
                 { name: "Equinox Elite Fitness Club", category: "Fitness Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0155", verified: true, desc: "High-performance fitness club featuring personal training, spa, and rooftop yoga." },
                 { name: "Botanical & Gardening Guild", category: "Gardening Clubs", city: "Williamsburg", state: "VA", phone: "(757) 555-0138", verified: false, desc: "Master gardeners association, greenhouse workshops, and historic estate tours." },
                 { name: "Blue Note Jazz & Music Club", category: "Music Clubs", city: "New York", state: "NY", phone: "(212) 475-8592", verified: true, desc: "Legendary Greenwich Village venue hosting world-class jazz artists and VIP seating." },
+
+                // --- NIGHT CLUBS & TRAVEL ---
                 { name: "XS Nightclub & VIP Lounge", category: "Night Clubs", city: "Las Vegas", state: "NV", phone: "(702) 770-0097", verified: true, desc: "Opulent indoor-outdoor nightlife venue with VIP bottle service and poolside cabanas." },
-                { name: "Omnia Rooftop Day Club", category: "Day Clubs", city: "Las Vegas", state: "NV", phone: "(702) 785-6200", verified: true, desc: "Multi-tier daytime pool party and lounge experience overlooking the Las Vegas Strip." },
+                { name: "E11EVEN Ultra Night Club", category: "Night Clubs", city: "Miami", state: "FL", phone: "(305) 829-2911", verified: true, desc: "24-hour immersive nightlife destination offering VIP tables and live entertainment." },
                 { name: "Jetsetter Global Travel Club", category: "Travel Clubs", city: "Dallas", state: "TX", phone: "(214) 555-0189", verified: true, desc: "Luxury private-jet and chartered expedition club for international explorers." },
-                { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." },
-                { name: "Colonial Heritage Golf Club", category: "Golf Clubs", city: "Williamsburg", state: "VA", phone: "(757) 645-2030", verified: true, desc: "Arthur Hills championship golf design with an active clubhouse and social calendar." }
+                { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." }
             ];
 
             var activeState = "";
@@ -233,8 +264,10 @@
                 { id: "Golf Clubs", label: "Golf Clubs" },
                 { id: "Music Clubs", label: "Music Clubs" },
                 { id: "Night Clubs", label: "Night Clubs" },
+                { id: "Private Social Clubs", label: "Private Social Clubs" },
                 { id: "Tennis & Racquet Clubs", label: "Tennis Clubs" },
                 { id: "Travel Clubs", label: "Travel Clubs" },
+                { id: "Women's Clubs", label: "Women's Clubs" },
                 { id: "Yacht Clubs", label: "Yacht Clubs" }
             ];
 
@@ -288,7 +321,7 @@
                     var c = clubs[i];
                     var okState = (activeState === "" || c.state === activeState);
                     var okCat = (activeCategory === "" || c.category === activeCategory);
-                    if (okState && okCat) filtered.push(c);
+                    if (okState && okCat) filtered.path ? null : filtered.push(c);
                 }
 
                 countText.textContent = "Showing " + filtered.length + " of " + clubs.length + " clubs";
@@ -353,8 +386,8 @@
                 var saveBtn = document.getElementById("saveModalBtn");
 
                 document.getElementById("inName").value = club ? club.name : "";
-                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Beach Clubs");
-                document.getElementById("inState").value = club ? club.state : (activeState || "FL");
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Private Social Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "CA");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
                 document.getElementById("inDesc").value = club ? club.desc : "";
