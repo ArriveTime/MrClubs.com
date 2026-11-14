@@ -34,13 +34,13 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                National A-to-Z Directory • Dayclubs, Nightclubs, Equestrian, Collegiate & Social Clubs
+                National A-to-Z Directory • Country, Golf, Dayclubs, Nightclubs & Social Clubs
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore Las Vegas dayclubs & nightclubs, equestrian & thoroughbred racing clubs, university alumni associations, private social lounges, and country clubs across all 50 states.
+                Explore premier country clubs, championship golf courses, Las Vegas dayclubs & nightclubs, equestrian racing clubs, and university alumni associations across all 50 states.
             </p>
         </div>
     </header>
@@ -113,7 +113,7 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Encore Beach Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Congressional Country Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -125,8 +125,8 @@
                             <option value="Bike Clubs">Bike Clubs</option>
                             <option value="Book Clubs">Book Clubs</option>
                             <option value="Bowling & Alley Clubs">Bowling Clubs</option>
-                            <option value="Country Clubs">Country Clubs</option>
-                            <option value="Day Clubs" selected>Day Clubs</option>
+                            <option value="Country Clubs" selected>Country Clubs</option>
+                            <option value="Day Clubs">Day Clubs</option>
                             <option value="Dinner Clubs">Dinner Clubs</option>
                             <option value="Equestrian & Thoroughbred Clubs">Equestrian & Thoroughbred</option>
                             <option value="Fitness Clubs">Fitness Clubs</option>
@@ -149,23 +149,23 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV" selected>NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD" selected>MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Las Vegas" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Bethesda" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
-                        <input type="text" id="inPhone" placeholder="(702) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(301) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Street Address *</label>
-                    <input type="text" id="inAddress" required placeholder="e.g. 3121 Las Vegas Blvd S" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inAddress" required placeholder="e.g. 8500 River Rd" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Official Website URL *</label>
@@ -177,7 +177,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Cabanas, VIP tables, resident DJs, or amenities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <textarea id="inDesc" rows="2" placeholder="Championship golf, tennis, dining, or membership perks..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -191,6 +191,154 @@
     <script>
         window.onload = function () {
             var clubs = [
+                // --- COUNTRY CLUBS ---
+                { 
+                    name: "Congressional Country Club", 
+                    category: "Country Clubs", 
+                    city: "Bethesda", 
+                    state: "MD", 
+                    address: "8500 River Rd", 
+                    phone: "(301) 469-2000", 
+                    website: "https://www.ccclub.org", 
+                    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Ranked #1 Platinum Country Club in America, featuring championship Blue and Gold golf courses, tennis, and grand clubhouse." 
+                },
+                { 
+                    name: "The Country Club of Virginia", 
+                    category: "Country Clubs", 
+                    city: "Richmond", 
+                    state: "VA", 
+                    address: "6031 St Andrews Ln", 
+                    phone: "(804) 288-2891", 
+                    website: "https://www.theccv.org", 
+                    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic private family country club with 54 holes of golf, racquet facilities, fitness center, and fine dining." 
+                },
+                { 
+                    name: "Ocean Reef Club", 
+                    category: "Country Clubs", 
+                    city: "Key Largo", 
+                    state: "FL", 
+                    address: "35 Ocean Reef Dr", 
+                    phone: "(305) 367-2611", 
+                    website: "https://www.oceanreef.com", 
+                    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Exclusive 2,500-acre private club community featuring two championship golf courses, private marina, and airstrip." 
+                },
+                { 
+                    name: "The Los Angeles Country Club", 
+                    category: "Country Clubs", 
+                    city: "Los Angeles", 
+                    state: "CA", 
+                    address: "10101 Wilshire Blvd", 
+                    phone: "(310) 276-6104", 
+                    website: "https://www.thelacc.org", 
+                    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Prestigious Beverly Hills-adjacent private club featuring the historic North and South championship courses." 
+                },
+                { 
+                    name: "River Oaks Country Club", 
+                    category: "Country Clubs", 
+                    city: "Houston", 
+                    state: "TX", 
+                    address: "1600 River Oaks Blvd", 
+                    phone: "(713) 529-4321", 
+                    website: "https://www.riveroakscc.net", 
+                    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Premier Texas social and athletic institution founded in 1923 with Donald Ross-designed golf and championship tennis." 
+                },
+                { 
+                    name: "Medinah Country Club", 
+                    category: "Country Clubs", 
+                    city: "Medinah", 
+                    state: "IL", 
+                    address: "6N001 Medinah Rd", 
+                    phone: "(630) 773-1700", 
+                    website: "https://www.medinahcc.org", 
+                    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Renowned Midwest country club famous for its iconic Byzantine-style clubhouse and Ryder Cup Course #3." 
+                },
+
+                // --- GOLF CLUBS ---
+                { 
+                    name: "Augusta National Golf Club", 
+                    category: "Golf Clubs", 
+                    city: "Augusta", 
+                    state: "GA", 
+                    address: "2604 Washington Rd", 
+                    phone: "(706) 667-6000", 
+                    website: "https://www.masters.com", 
+                    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "World-famous private golf club founded by Bobby Jones and Clifford Roberts, home of The Masters Tournament." 
+                },
+                { 
+                    name: "Pine Valley Golf Club", 
+                    category: "Golf Clubs", 
+                    city: "Pine Valley", 
+                    state: "NJ", 
+                    address: "1 E Atlantic Ave", 
+                    phone: "(856) 783-3000", 
+                    website: "https://www.pinevalleygolfclub.com", 
+                    image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Consistently ranked among the top golf courses in the world, set across the New Jersey Pine Barrens." 
+                },
+                { 
+                    name: "Cypress Point Club", 
+                    category: "Golf Clubs", 
+                    city: "Pebble Beach", 
+                    state: "CA", 
+                    address: "3150 17 Mile Dr", 
+                    phone: "(831) 624-2223", 
+                    website: "https://www.cypresspointclub.org", 
+                    image: "https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Alister MacKenzie-designed coastal masterpiece on the Monterey Peninsula overlooking the Pacific Ocean." 
+                },
+                { 
+                    name: "Shinnecock Hills Golf Club", 
+                    category: "Golf Clubs", 
+                    city: "Southampton", 
+                    state: "NY", 
+                    address: "200 Tuckahoe Rd", 
+                    phone: "(631) 283-1310", 
+                    website: "https://www.shinnecockhillsgolfclub.org", 
+                    image: "https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "One of the five founding member clubs of the USGA and recurring host of the U.S. Open Championship." 
+                },
+                { 
+                    name: "Oakmont Country Club", 
+                    category: "Golf Clubs", 
+                    city: "Oakmont", 
+                    state: "PA", 
+                    address: "1233 Hulton Rd", 
+                    phone: "(412) 828-8000", 
+                    website: "https://www.oakmont-countryclub.org", 
+                    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic championship golf club founded in 1903, renowned for its lightning-fast greens and Church Pews bunker." 
+                },
+                { 
+                    name: "Wynn Golf Club", 
+                    category: "Golf Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3131 Las Vegas Blvd S", 
+                    phone: "(702) 770-4653", 
+                    website: "https://www.wynnlasvegas.com/experiences/wynn-golf-club", 
+                    image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "The only championship golf course located directly on the Las Vegas Strip, designed by Tom Fazio." 
+                },
+
                 // --- LAS VEGAS DAY CLUBS ---
                 { 
                     name: "Encore Beach Club (EBC)", 
@@ -313,6 +461,58 @@
                     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
                     verified: true, 
                     desc: "Flagship luxury nightlife experience at Fontainebleau on the north end of the Las Vegas Strip." 
+                },
+
+                // --- PRIVATE SOCIAL CLUBS (FIXED ZERO BOND WYNN LINK) ---
+                { 
+                    name: "Zero Bond at Wynn Las Vegas", 
+                    category: "Private Social Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3131 Las Vegas Blvd S (Wynn Las Vegas)", 
+                    phone: "(702) 770-7000", 
+                    website: "https://www.wynnlasvegas.com/experiences/zero-bond", 
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Exclusive private members club at Wynn Las Vegas featuring fine art, private dining, cigar humidors, and wine lockers." 
+                },
+                { 
+                    name: "Zero Bond New York", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "33 Bond St", 
+                    phone: "(212) 677-1100", 
+                    website: "https://zerobond.com", 
+                    image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Premier NoHo private members club featuring multiple restaurants, lounges, and workspace." 
+                },
+                { 
+                    name: "Soho House New York", 
+                    category: "Private Social Clubs", 
+                    city: "New York", 
+                    state: "NY", 
+                    address: "29 9th Ave", 
+                    phone: "(212) 627-9800", 
+                    website: "https://www.sohohouse.com", 
+                    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Meatpacking district private club with rooftop pool, screening room, and lounge." 
+                },
+
+                // --- WOMEN'S CLUBS (FIXED BEVERLY HILLS WOMEN'S CLUB LINK) ---
+                { 
+                    name: "The Beverly Hills Women's Club", 
+                    category: "Women's Clubs", 
+                    city: "Beverly Hills", 
+                    state: "CA", 
+                    address: "1700 Chevy Chase Dr", 
+                    phone: "(310) 276-5804", 
+                    website: "https://bhwc1916.org/", 
+                    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Historic 1916 philanthropic, cultural, and social women's club hosting luncheons, book clubs, and civic events." 
                 },
 
                 // --- EQUESTRIAN & THOROUGHBRED CLUBS ---
@@ -519,58 +719,6 @@
                     image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80",
                     verified: true, 
                     desc: "World-renowned winter sports club fostering alpine, freestyle, and snowboarding excellence." 
-                },
-
-                // --- PRIVATE SOCIAL CLUBS ---
-                { 
-                    name: "Zero Bond", 
-                    category: "Private Social Clubs", 
-                    city: "New York", 
-                    state: "NY", 
-                    address: "33 Bond St", 
-                    phone: "(212) 677-1100", 
-                    website: "https://zerobond.com", 
-                    image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
-                    verified: true, 
-                    desc: "Premier NoHo private members club featuring multiple restaurants, lounges, and workspace." 
-                },
-                { 
-                    name: "Zero Bond Las Vegas", 
-                    category: "Private Social Clubs", 
-                    city: "Las Vegas", 
-                    state: "NV", 
-                    address: "3708 S Las Vegas Blvd", 
-                    phone: "(702) 555-0144", 
-                    website: "https://zerobond.com", 
-                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-                    verified: true, 
-                    desc: "Exclusive luxury private social club bringing high-end dining and member lounges to the Strip." 
-                },
-                { 
-                    name: "Soho House New York", 
-                    category: "Private Social Clubs", 
-                    city: "New York", 
-                    state: "NY", 
-                    address: "29 9th Ave", 
-                    phone: "(212) 627-9800", 
-                    website: "https://www.sohohouse.com", 
-                    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
-                    verified: true, 
-                    desc: "Meatpacking district private club with rooftop pool, screening room, and lounge." 
-                },
-
-                // --- WOMEN'S CLUBS ---
-                { 
-                    name: "Beverly Hills Woman's Club", 
-                    category: "Women's Clubs", 
-                    city: "Beverly Hills", 
-                    state: "CA", 
-                    address: "1700 Chevy Chase Dr", 
-                    phone: "(310) 555-0182", 
-                    website: "https://www.beverlyhillswomansclub.org", 
-                    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-                    verified: true, 
-                    desc: "Historic philanthropic and social women's organization hosting cultural and civic events." 
                 }
             ];
 
@@ -740,8 +888,8 @@
                 var saveBtn = document.getElementById("saveModalBtn");
 
                 document.getElementById("inName").value = club ? club.name : "";
-                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Day Clubs");
-                document.getElementById("inState").value = club ? club.state : (activeState || "NV");
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Country Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "MD");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
                 document.getElementById("inAddress").value = club ? club.address : "";
