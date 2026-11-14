@@ -3,137 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrClubs.com — The National Club Directory</title>
+    <title>MrClubs.com — National Club Directory</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .hero-bg {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
-                        url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-        }
-        .filter-pill.active {
-            background-color: #f59e0b;
-            color: #020617;
-            border-color: #f59e0b;
+        .pill-active {
+            background-color: #f59e0b !important;
+            color: #0f172a !important;
+            border-color: #f59e0b !important;
+            font-weight: 800;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+<body class="bg-slate-100 text-slate-900 min-h-screen flex flex-col">
 
-    <!-- Top Navigation -->
+    <!-- Top Bar -->
     <nav class="bg-slate-950 text-white border-b border-slate-800 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
-            <a href="#" id="brandLogo" class="flex items-center gap-2.5 cursor-pointer">
-                <div class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold text-lg shadow-lg">
-                    M
-                </div>
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+            <button type="button" id="logoBtn" class="flex items-center gap-2.5 text-left bg-transparent border-none text-white cursor-pointer">
+                <span class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg">M</span>
                 <span class="text-xl font-extrabold tracking-tight">MrClubs<span class="text-amber-400">.com</span></span>
-            </a>
-            <div class="flex items-center gap-4">
-                <button type="button" id="topAddBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm transition shadow-md flex items-center gap-2 cursor-pointer">
-                    <i class="fa-solid fa-plus"></i> Add / Claim Club
-                </button>
-            </div>
+            </button>
+            <button type="button" id="openAddBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-sm cursor-pointer border-none">
+                + Add / Claim Club
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <header class="hero-bg text-white py-12 sm:py-16 px-4 text-center">
+    <!-- Hero -->
+    <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
-            <span class="inline-block bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-3">
-                Click-to-Browse Directory
+            <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+                State & Category Directory
             </span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Find Exclusive Clubs By <span class="text-amber-400">State & Category</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                Browse Clubs By <span class="text-amber-400">State & Category</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Select your state and explore top country clubs, yacht clubs, aviation societies, and VIP lounges instantly.
+                Click any state below, then pick a club category to view listings immediately.
             </p>
         </div>
     </header>
 
-    <!-- Step 1: Select State -->
-    <section class="bg-white border-b border-slate-200 py-6 px-4 shadow-sm">
+    <!-- Step 1: State Selector -->
+    <section class="bg-white border-b border-slate-200 py-5 px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="flex items-center justify-between mb-3">
-                <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Step 1: Choose a State</h3>
-                <span id="selectedStateLabel" class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Viewing: All States</span>
+            <div class="flex items-center justify-between mb-2.5">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">1. Select a State</span>
+                <span id="stateBadge" class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">All States</span>
             </div>
-            <div class="flex flex-wrap gap-2" id="stateButtonsContainer">
-                <!-- State buttons injected via JS -->
-            </div>
+            <div id="stateBar" class="flex flex-wrap gap-2"></div>
         </div>
     </section>
 
-    <!-- Step 2: Select Category -->
-    <section class="bg-slate-100 border-b border-slate-200 py-5 px-4">
+    <!-- Step 2: Category Selector -->
+    <section class="bg-slate-50 border-b border-slate-200 py-5 px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="flex items-center justify-between mb-3">
-                <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Step 2: Choose a Club Category</h3>
-                <span id="selectedCategoryLabel" class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">Viewing: All Categories</span>
+            <div class="flex items-center justify-between mb-2.5">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">2. Select a Category</span>
+                <span id="catBadge" class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">All Categories</span>
             </div>
-            <div class="flex flex-wrap gap-2" id="categoryButtonsContainer">
-                <!-- Category buttons injected via JS -->
-            </div>
+            <div id="catBar" class="flex flex-wrap gap-2"></div>
         </div>
     </section>
 
-    <!-- Main Listings Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
-        <div class="flex justify-between items-center mb-6">
+    <!-- Results Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
             <div>
-                <h2 class="text-2xl font-extrabold text-slate-900" id="resultsHeading">Directory Results</h2>
-                <p class="text-sm text-slate-500" id="resultsCount">Loading clubs...</p>
+                <h2 class="text-2xl font-extrabold text-slate-900">Club Listings</h2>
+                <p id="countText" class="text-sm text-slate-600">Loading directory...</p>
             </div>
-            <button type="button" id="resetAllBtn" class="text-xs font-bold text-slate-600 hover:text-amber-600 bg-white border border-slate-200 px-3.5 py-2 rounded-lg shadow-sm transition cursor-pointer">
-                Reset Filters
+            <button type="button" id="resetBtn" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-bold px-4 py-2 rounded-lg cursor-pointer">
+                Show All Clubs
             </button>
         </div>
 
-        <!-- Cards Grid -->
-        <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+        <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800 mt-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <div>
-                <span class="text-white font-bold text-lg">MrClubs<span class="text-amber-400">.com</span></span>
-                <p class="text-xs text-slate-500 mt-1">The A–Z Directory of Private, Social & Recreational Clubs.</p>
-            </div>
-            <div class="flex gap-6 text-xs">
-                <button type="button" id="footerAddBtn" class="hover:text-white cursor-pointer">Submit a Club</button>
-                <button type="button" id="footerClaimBtn" class="hover:text-white cursor-pointer">Claim Your Listing</button>
-                <a href="#" class="hover:text-white">Back to Top</a>
-            </div>
-        </div>
+    <footer class="bg-slate-950 text-slate-400 py-8 px-4 text-center text-xs border-t border-slate-800">
+        <p class="text-white font-bold text-sm mb-1">MrClubs.com</p>
+        <p>National Directory of Golf, Country, Yacht, Aviation, Social & VIP Clubs.</p>
     </footer>
 
-    <!-- Add / Claim Modal -->
-    <div id="clubModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button type="button" id="closeModalBtn" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl cursor-pointer">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div class="mb-5">
-                <span id="modalBadge" class="text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">Directory Submission</span>
-                <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-900 mt-2">Add or Claim a Club</h3>
-                <p id="modalSubtitle" class="text-sm text-slate-500 mt-1">Submit your club details below to publish it directly.</p>
-            </div>
+    <!-- Modal -->
+    <div id="modalOverlay" style="display:none;" class="fixed inset-0 bg-black/75 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button type="button" id="closeModalX" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-2xl font-bold leading-none bg-transparent border-none cursor-pointer">&times;</button>
+            <span id="modalTag" class="text-xs font-bold uppercase bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">Directory Form</span>
+            <h3 id="modalHeading" class="text-xl font-extrabold text-slate-900 mt-2">Add or Claim a Club</h3>
+            <p id="modalSub" class="text-xs text-slate-500 mt-1 mb-4">Enter club details below to publish immediately.</p>
 
-            <form id="clubForm" class="space-y-4">
+            <form id="entryForm" class="space-y-3">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Club Name *</label>
-                    <input type="text" id="formName" required placeholder="e.g. Colonial Heritage Golf Club" class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
+                    <input type="text" id="inName" required placeholder="e.g. Williamsburg Golf Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Category *</label>
-                        <select id="formCategory" required class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Category *</label>
+                        <select id="inCategory" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                             <option value="Aviation Clubs">Aviation Clubs</option>
                             <option value="Book Clubs">Book Clubs</option>
                             <option value="Chess Clubs">Chess Clubs</option>
@@ -145,10 +115,10 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">State *</label>
-                        <select id="formState" required class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
+                        <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                             <option value="CA">California (CA)</option>
-                            <option value="DC">Washington, D.C. (DC)</option>
+                            <option value="DC">Washington D.C. (DC)</option>
                             <option value="FL">Florida (FL)</option>
                             <option value="NV">Nevada (NV)</option>
                             <option value="NY">New York (NY)</option>
@@ -157,41 +127,32 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">City *</label>
-                        <input type="text" id="formCity" required placeholder="e.g. Williamsburg" class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
+                        <input type="text" id="inCity" required placeholder="e.g. Williamsburg" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Phone Number</label>
-                        <input type="text" id="formPhone" placeholder="(757) 555-0199" class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Phone</label>
+                        <input type="text" id="inPhone" placeholder="(757) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
-
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Contact Email *</label>
-                    <input type="email" id="formEmail" required placeholder="manager@yourclub.com" class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
+                    <textarea id="inDesc" rows="2" placeholder="Championship course, private marina, or social membership..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Short Description</label>
-                    <textarea id="formDesc" rows="2" placeholder="Private championship course and clubhouse..." class="w-full px-3.5 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none"></textarea>
-                </div>
-
-                <div class="pt-2 flex justify-end gap-3">
-                    <button type="button" id="cancelModalBtn" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 cursor-pointer">Cancel</button>
-                    <button type="submit" id="submitModalBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-2.5 rounded-lg text-sm shadow-md transition cursor-pointer">
-                        Publish Listing Now
-                    </button>
+                <div class="pt-2 flex justify-end gap-2">
+                    <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
+                    <button type="submit" id="saveModalBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2 rounded-lg text-xs cursor-pointer border-none">Save & Publish</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Script executed strictly on window.load -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const categoryImages = {
+        window.onload = function () {
+            var images = {
                 "Country Clubs": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
                 "Golf Clubs": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
                 "Yacht Clubs": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
@@ -202,7 +163,7 @@
                 "Nightlife & VIP Clubs": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80"
             };
 
-            const defaultClubs = [
+            var clubs = [
                 { name: "The Country Club of Virginia", category: "Country Clubs", city: "Richmond", state: "VA", phone: "(804) 288-2891", verified: true, desc: "Premier private club featuring 54 holes of golf, racquet sports, and fine dining." },
                 { name: "Colonial Heritage Golf Club", category: "Golf Clubs", city: "Williamsburg", state: "VA", phone: "(757) 645-2030", verified: true, desc: "Arthur Hills championship golf design with an active clubhouse and social calendar." },
                 { name: "Kingsmill Resort & Golf Club", category: "Golf Clubs", city: "Williamsburg", state: "VA", phone: "(757) 253-1703", verified: true, desc: "Riverfront championship courses and private marina amenities along the James River." },
@@ -229,65 +190,239 @@
                 { name: "Metropolitan Club of Washington", category: "Country Clubs", city: "Washington", state: "DC", phone: "(202) 835-2500", verified: true, desc: "Historic private social and dining club located two blocks from the White House." }
             ];
 
-            let clubs = [];
-            try {
-                const stored = localStorage.getItem("mrclubs_click_data");
-                clubs = stored ? JSON.parse(stored) : defaultClubs;
-                if (!Array.isArray(clubs) || clubs.length === 0) clubs = defaultClubs;
-            } catch (err) {
-                clubs = defaultClubs;
+            var activeState = "";
+            var activeCategory = "";
+
+            var stateList = [
+                { code: "", label: "All States" },
+                { code: "VA", label: "Virginia" },
+                { code: "CA", label: "California" },
+                { code: "FL", label: "Florida" },
+                { code: "DC", label: "Washington D.C." },
+                { code: "NV", label: "Nevada" },
+                { code: "NY", label: "New York" },
+                { code: "TX", label: "Texas" }
+            ];
+
+            var catList = [
+                { id: "", label: "All Categories" },
+                { id: "Aviation Clubs", label: "Aviation Clubs" },
+                { id: "Book Clubs", label: "Book Clubs" },
+                { id: "Chess Clubs", label: "Chess Clubs" },
+                { id: "Cigar Clubs", label: "Cigar Clubs" },
+                { id: "Country Clubs", label: "Country Clubs" },
+                { id: "Golf Clubs", label: "Golf Clubs" },
+                { id: "Nightlife & VIP Clubs", label: "Nightlife & VIP" },
+                { id: "Yacht Clubs", label: "Yacht Clubs" }
+            ];
+
+            var stateBar = document.getElementById("stateBar");
+            var catBar = document.getElementById("catBar");
+            var cardsGrid = document.getElementById("cardsGrid");
+            var countText = document.getElementById("countText");
+            var modalOverlay = document.getElementById("modalOverlay");
+
+            // Render State Pills
+            for (var i = 0; i < stateList.length; i++) {
+                (function (st) {
+                    var btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.textContent = st.label;
+                    btn.className = "st-btn px-3.5 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (st.code === "" ? " pill-active" : "");
+                    btn.onclick = function () {
+                        activeState = st.code;
+                        var allSt = document.querySelectorAll(".st-btn");
+                        for (var j = 0; j < allSt.length; j++) allSt[j].classList.remove("pill-active");
+                        btn.classList.add("pill-active");
+                        document.getElementById("stateBadge").textContent = st.label;
+                        render();
+                    };
+                    stateBar.appendChild(btn);
+                })(stateList[i]);
             }
 
-            let selectedState = "";
-            let selectedCategory = "";
+            // Render Category Pills
+            for (var k = 0; k < catList.length; k++) {
+                (function (ct) {
+                    var btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.textContent = ct.label;
+                    btn.className = "ct-btn px-3.5 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white text-slate-700 hover:border-amber-500 cursor-pointer" + (ct.id === "" ? " pill-active" : "");
+                    btn.onclick = function () {
+                        activeCategory = ct.id;
+                        var allCt = document.querySelectorAll(".ct-btn");
+                        for (var j = 0; j < allCt.length; j++) allCt[j].classList.remove("pill-active");
+                        btn.classList.add("pill-active");
+                        document.getElementById("catBadge").textContent = ct.label;
+                        render();
+                    };
+                    catBar.appendChild(btn);
+                })(catList[k]);
+            }
 
-            const grid = document.getElementById("listingsGrid");
-            const countLabel = document.getElementById("resultsCount");
-            const stateContainer = document.getElementById("stateButtonsContainer");
-            const categoryContainer = document.getElementById("categoryButtonsContainer");
-            const modal = document.getElementById("clubModal");
+            function render() {
+                var filtered = [];
+                for (var i = 0; i < clubs.length; i++) {
+                    var c = clubs[i];
+                    var okState = (activeState === "" || c.state === activeState);
+                    var okCat = (activeCategory === "" || c.category === activeCategory);
+                    if (okState && okCat) filtered.push(c);
+                }
 
-            // States List
-            const states = [
-                { code: "", name: "All States" },
-                { code: "VA", name: "Virginia" },
-                { code: "CA", name: "California" },
-                { code: "FL", name: "Florida" },
-                { code: "DC", name: "Washington D.C." },
-                { code: "NV", name: "Nevada" },
-                { code: "NY", name: "New York" },
-                { code: "TX", name: "Texas" }
-            ];
+                countText.textContent = "Showing " + filtered.length + " of " + clubs.length + " clubs";
+                cardsGrid.innerHTML = "";
 
-            // Categories List
-            const categories = [
-                { id: "", name: "All Categories" },
-                { id: "Aviation Clubs", name: "✈️ Aviation Clubs" },
-                { id: "Book Clubs", name: "📚 Book Clubs" },
-                { id: "Chess Clubs", name: "♟️ Chess Clubs" },
-                { id: "Cigar Clubs", name: "💨 Cigar Clubs" },
-                { id: "Country Clubs", name: "⛳ Country Clubs" },
-                { id: "Golf Clubs", name: "🏌️ Golf Clubs" },
-                { id: "Nightlife & VIP Clubs", name: "🍸 Nightlife & VIP" },
-                { id: "Yacht Clubs", name: "⛵ Yacht Clubs" }
-            ];
+                if (filtered.length === 0) {
+                    var empty = document.createElement("div");
+                    empty.className = "col-span-full bg-white border border-slate-200 rounded-xl p-10 text-center";
+                    empty.innerHTML = '<p class="font-bold text-slate-800 text-lg">No clubs listed in this State + Category yet.</p><p class="text-sm text-slate-500 mt-1 mb-4">Click below to add the first club here.</p>';
+                    var addEmptyBtn = document.createElement("button");
+                    addEmptyBtn.type = "button";
+                    addEmptyBtn.textContent = "+ Add a Club Here";
+                    addEmptyBtn.className = "bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs cursor-pointer border-none";
+                    addEmptyBtn.onclick = function () { openModal("add", null); };
+                    empty.appendChild(addEmptyBtn);
+                    cardsGrid.appendChild(empty);
+                    return;
+                }
 
-            // Render State Buttons
-            states.forEach(function (s) {
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.textContent = s.name;
-                btn.dataset.state = s.code;
-                btn.className = "state-pill px-3.5 py-1.5 rounded-lg text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-500 transition cursor-pointer " + (s.code === "" ? "active" : "");
-                stateContainer.appendChild(btn);
-            });
+                for (var m = 0; m < filtered.length; m++) {
+                    (function (club) {
+                        var card = document.createElement("div");
+                        card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col justify-between";
 
-            // Render Category Buttons
-            categories.forEach(function (c) {
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.textContent = c.name;
-                btn.dataset.category = c.id;
-                btn.className = "category-pill px-3.5 py-1.5 rounded-lg text-xs font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-500 transition cursor-pointer " + (c.id === "" ? "active" : "");
-                categoryContainer.appendChild(btn);
-            });
+                        var imgSrc = images[club.category] || images["Country Clubs"];
+                        var badge = club.verified
+                            ? '<span class="bg-emerald-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full">Verified</span>'
+                            : '<span class="bg-slate-800 text-slate-200 text-[10px] font-semibold uppercase px-2.5 py-1 rounded-full">Unclaimed</span>';
+
+                        card.innerHTML =
+                            '<div>' +
+                                '<div class="relative h-44 bg-slate-200">' +
+                                    '<img src="' + imgSrc + '" alt="' + club.name + '" class="w-full h-full object-cover">' +
+                                    '<span class="absolute top-3 left-3 bg-slate-950/85 text-amber-400 text-xs font-bold px-3 py-1 rounded-full">' + club.category + '</span>' +
+                                    '<div class="absolute top-3 right-3">' + badge + '</div>' +
+                                '</div>' +
+                                '<div class="p-5">' +
+                                    '<div class="flex justify-between text-xs font-bold text-slate-400 uppercase mb-1">' +
+                                        '<span>' + club.city + ', ' + club.state + '</span>' +
+                                        '<span>' + (club.phone || '') + '</span>' +
+                                    '</div>' +
+                                    '<h3 class="text-lg font-extrabold text-slate-900">' + club.name + '</h3>' +
+                                    '<p class="text-slate-600 text-sm mt-2">' + (club.desc || '') + '</p>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-100 flex justify-between items-center">' +
+                                '<button type="button" class="claim-link text-xs font-bold text-slate-600 hover:text-amber-600 cursor-pointer bg-transparent border-none">' + (club.verified ? 'Update Listing' : 'Claim Listing') + '</button>' +
+                                '<button type="button" class="info-link text-xs font-bold bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg cursor-pointer border-none">Membership Info &rarr;</button>' +
+                            '</div>';
+
+                        card.querySelector(".claim-link").onclick = function () { openModal("claim", club); };
+                        card.querySelector(".info-link").onclick = function () { openModal("inquire", club); };
+                        cardsGrid.appendChild(card);
+                    })(filtered[m]);
+                }
+            }
+
+            function openModal(mode, club) {
+                var heading = document.getElementById("modalHeading");
+                var sub = document.getElementById("modalSub");
+                var tag = document.getElementById("modalTag");
+                var saveBtn = document.getElementById("saveModalBtn");
+
+                document.getElementById("inName").value = club ? club.name : "";
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Country Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "VA");
+                document.getElementById("inCity").value = club ? club.city : "";
+                document.getElementById("inPhone").value = club ? club.phone : "";
+                document.getElementById("inDesc").value = club ? club.desc : "";
+
+                if (mode === "claim") {
+                    tag.textContent = "Claim Ownership";
+                    heading.textContent = club ? "Claim: " + club.name : "Claim Listing";
+                    sub.textContent = "Update details and mark this club as verified.";
+                    saveBtn.textContent = "Verify & Save";
+                } else if (mode === "inquire") {
+                    tag.textContent = "Membership Inquiry";
+                    heading.textContent = club ? "Inquire: " + club.name : "Club Inquiry";
+                    sub.textContent = "Submit your contact details to request membership rates.";
+                    saveBtn.textContent = "Send Inquiry";
+                } else {
+                    tag.textContent = "Add New Club";
+                    heading.textContent = "Add a Club to MrClubs.com";
+                    sub.textContent = "Publish a new club directly into the directory.";
+                    saveBtn.textContent = "Publish Club";
+                }
+
+                modalOverlay.style.display = "flex";
+            }
+
+            function closeModal() {
+                modalOverlay.style.display = "none";
+            }
+
+            function resetFilters() {
+                activeState = "";
+                activeCategory = "";
+                var allSt = document.querySelectorAll(".st-btn");
+                for (var i = 0; i < allSt.length; i++) {
+                    allSt[i].classList.remove("pill-active");
+                    if (i === 0) allSt[i].classList.add("pill-active");
+                }
+                var allCt = document.querySelectorAll(".ct-btn");
+                for (var j = 0; j < allCt.length; j++) {
+                    allCt[j].classList.remove("pill-active");
+                    if (j === 0) allCt[j].classList.add("pill-active");
+                }
+                document.getElementById("stateBadge").textContent = "All States";
+                document.getElementById("catBadge").textContent = "All Categories";
+                render();
+            }
+
+            document.getElementById("openAddBtn").onclick = function () { openModal("add", null); };
+            document.getElementById("closeModalX").onclick = closeModal;
+            document.getElementById("cancelModalBtn").onclick = closeModal;
+            document.getElementById("resetBtn").onclick = resetFilters;
+            document.getElementById("logoBtn").onclick = resetFilters;
+
+            modalOverlay.onclick = function (e) {
+                if (e.target === modalOverlay) closeModal();
+            };
+
+            document.getElementById("entryForm").onsubmit = function (e) {
+                e.preventDefault();
+                var nameVal = document.getElementById("inName").value.trim();
+                var newEntry = {
+                    name: nameVal,
+                    category: document.getElementById("inCategory").value,
+                    state: document.getElementById("inState").value,
+                    city: document.getElementById("inCity").value.trim(),
+                    phone: document.getElementById("inPhone").value.trim() || "(800) 555-0100",
+                    verified: true,
+                    desc: document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com."
+                };
+
+                var foundIdx = -1;
+                for (var i = 0; i < clubs.length; i++) {
+                    if (clubs[i].name.toLowerCase() === nameVal.toLowerCase()) {
+                        foundIdx = i;
+                        break;
+                    }
+                }
+                if (foundIdx >= 0) {
+                    clubs[foundIdx] = newEntry;
+                } else {
+                    clubs.unshift(newEntry);
+                }
+
+                closeModal();
+                document.getElementById("entryForm").reset();
+                resetFilters();
+            };
+
+            // Initial Render
+            render();
+        };
+    </script>
+</body>
+</html>
