@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrClubs.com — National A-to-Z Club Directory</title>
+    <title>MrClubs.com — Comprehensive A-to-Z Club Directory</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -37,10 +37,10 @@
                 National A-to-Z Directory • All 50 States
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                Discover Every Club <span class="text-amber-400">From A to Z</span>
+                Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore book clubs, bridge clubs, country clubs, tennis clubs, yacht clubs, and more across all 50 states.
+                Explore art clubs, beach clubs, dinner clubs, night clubs, travel clubs, and more across all 50 states.
             </p>
         </div>
     </header>
@@ -56,14 +56,14 @@
         </div>
     </section>
 
-    <!-- Step 2: A-to-Z Category Selector -->
+    <!-- Step 2: Expanded A-to-Z Category Selector -->
     <section class="bg-slate-50 border-b border-slate-200 py-4 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">2. Select A-to-Z Category</span>
                 <span id="catBadge" class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">All Categories</span>
             </div>
-            <div id="catBar" class="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto p-1"></div>
+            <div id="catBar" class="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto p-1"></div>
         </div>
     </section>
 
@@ -99,46 +99,50 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Richmond Tennis Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Coastal Beach Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Category *</label>
                         <select id="inCategory" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="Aviation Clubs">Aviation Clubs</option>
-                            <option value="Baseball Clubs">Baseball Clubs</option>
-                            <option value="Book Clubs" selected>Book Clubs</option>
-                            <option value="Bridge Clubs">Bridge Clubs</option>
-                            <option value="Chess Clubs">Chess Clubs</option>
-                            <option value="Cigar Clubs">Cigar Clubs</option>
+                            <option value="Art Clubs">Art Clubs</option>
+                            <option value="Backgammon Clubs">Backgammon Clubs</option>
+                            <option value="Beach Clubs" selected>Beach Clubs</option>
+                            <option value="Bike Clubs">Bike Clubs</option>
+                            <option value="Book Clubs">Book Clubs</option>
                             <option value="Country Clubs">Country Clubs</option>
-                            <option value="Cycling Clubs">Cycling Clubs</option>
+                            <option value="Day Clubs">Day Clubs</option>
+                            <option value="Dinner Clubs">Dinner Clubs</option>
+                            <option value="Fitness Clubs">Fitness Clubs</option>
+                            <option value="Gardening Clubs">Gardening Clubs</option>
                             <option value="Golf Clubs">Golf Clubs</option>
-                            <option value="Nightlife & VIP Clubs">Nightlife & VIP Clubs</option>
+                            <option value="Music Clubs">Music Clubs</option>
+                            <option value="Night Clubs">Night Clubs</option>
                             <option value="Tennis & Racquet Clubs">Tennis & Racquet Clubs</option>
+                            <option value="Travel Clubs">Travel Clubs</option>
                             <option value="Yacht Clubs">Yacht Clubs</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA" selected>VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL" selected>FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Richmond" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Miami" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone / Contact</label>
-                        <input type="text" id="inPhone" placeholder="(804) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(305) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Membership details, court access, or club activities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <textarea id="inDesc" rows="2" placeholder="Membership perks, dining, access, or events..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -152,33 +156,40 @@
     <script>
         window.onload = function () {
             var images = {
-                "Country Clubs": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
-                "Golf Clubs": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
-                "Tennis & Racquet Clubs": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
-                "Yacht Clubs": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80",
+                "Art Clubs": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+                "Backgammon Clubs": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&w=800&q=80",
+                "Beach Clubs": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+                "Bike Clubs": "https://images.unsplash.com/photo-1517649763962-0c6232669e02?auto=format&fit=crop&w=800&q=80",
                 "Book Clubs": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80",
-                "Bridge Clubs": "https://images.unsplash.com/photo-1541199249251-f713e6145474?auto=format&fit=crop&w=800&q=80",
-                "Aviation Clubs": "https://images.unsplash.com/photo-1559067515-bf7d799b6d4d?auto=format&fit=crop&w=800&q=80",
-                "Chess Clubs": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80",
-                "Cigar Clubs": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
-                "Nightlife & VIP Clubs": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
-                "Cycling Clubs": "https://images.unsplash.com/photo-1517649763962-0c6232669e02?auto=format&fit=crop&w=800&q=80",
-                "Baseball Clubs": "https://images.unsplash.com/photo-1592656093955-5f0c11d4d732?auto=format&fit=crop&w=800&q=80"
+                "Country Clubs": "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=80",
+                "Day Clubs": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
+                "Dinner Clubs": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+                "Fitness Clubs": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+                "Gardening Clubs": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                "Golf Clubs": "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80",
+                "Music Clubs": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+                "Night Clubs": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
+                "Tennis & Racquet Clubs": "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
+                "Travel Clubs": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
+                "Yacht Clubs": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=800&q=80"
             };
 
             var clubs = [
-                { name: "The Country Club of Virginia", category: "Country Clubs", city: "Richmond", state: "VA", phone: "(804) 288-2891", verified: true, desc: "Premier private club featuring 54 holes of golf, tennis courts, and fine dining." },
-                { name: "Richmond Area Book Society", category: "Book Clubs", city: "Richmond", state: "VA", phone: "(804) 555-0143", verified: false, desc: "Monthly literary discussions covering classic and contemporary fiction." },
-                { name: "Richmond Duplicate Bridge Club", category: "Bridge Clubs", city: "Richmond", state: "VA", phone: "(804) 555-0177", verified: true, desc: "ACBL-sanctioned duplicate bridge games and lessons for all skill levels." },
-                { name: "Colonial Heritage Golf Club", category: "Golf Clubs", city: "Williamsburg", state: "VA", phone: "(757) 645-2030", verified: true, desc: "Arthur Hills championship golf design with an active clubhouse and social calendar." },
-                { name: "Tidewater Tennis & Racquet Club", category: "Tennis & Racquet Clubs", city: "Norfolk", state: "VA", phone: "(757) 555-0188", verified: true, desc: "Indoor and outdoor championship clay tennis courts with professional coaching." },
+                { name: "SoHo Arts & Gallery Club", category: "Art Clubs", city: "New York", state: "NY", phone: "(212) 555-0144", verified: true, desc: "Exclusive private artist salon, studio access, and private vernissage events." },
+                { name: "Manhattan Backgammon Association", category: "Backgammon Clubs", city: "New York", state: "NY", phone: "(212) 555-0182", verified: true, desc: "Weekly chouette games, tournaments, and masterclasses in midtown Manhattan." },
+                { name: "Soho Beach House Club", category: "Beach Clubs", city: "Miami Beach", state: "FL", phone: "(305) 555-0199", verified: true, desc: "Private oceanfront members' club with private beach access, rooftop pool, and dining." },
+                { name: "Pacific Coast Bike & Cycling Club", category: "Bike Clubs", city: "Santa Monica", state: "CA", phone: "(310) 555-0122", verified: true, desc: "Weekend coastal endurance rides and professional peloton training groups." },
+                { name: "The Metropolitan Dinner Club", category: "Dinner Clubs", city: "Chicago", state: "IL", phone: "(312) 555-0176", verified: true, desc: "Curated monthly epicurean dining experiences featuring Michelin-starred guest chefs." },
+                { name: "The Supper & Epicurean Society", category: "Dinner Clubs", city: "San Francisco", state: "CA", phone: "(415) 555-0111", verified: false, desc: "Private underground culinary gatherings and wine pairings in historic venues." },
+                { name: "Equinox Elite Fitness Club", category: "Fitness Clubs", city: "Los Angeles", state: "CA", phone: "(310) 555-0155", verified: true, desc: "High-performance fitness club featuring personal training, spa, and rooftop yoga." },
+                { name: "Botanical & Gardening Guild", category: "Gardening Clubs", city: "Williamsburg", state: "VA", phone: "(757) 555-0138", verified: false, desc: "Master gardeners association, greenhouse workshops, and historic estate tours." },
+                { name: "Blue Note Jazz & Music Club", category: "Music Clubs", city: "New York", state: "NY", phone: "(212) 475-8592", verified: true, desc: "Legendary Greenwich Village venue hosting world-class jazz artists and VIP seating." },
+                { name: "XS Nightclub & VIP Lounge", category: "Night Clubs", city: "Las Vegas", state: "NV", phone: "(702) 770-0097", verified: true, desc: "Opulent indoor-outdoor nightlife venue with VIP bottle service and poolside cabanas." },
+                { name: "E11EVEN Ultra Night Club", category: "Night Clubs", city: "Miami", state: "FL", phone: "(305) 829-2911", verified: true, desc: "24-hour immersive nightlife destination offering VIP tables and live entertainment." },
+                { name: "Omnia Rooftop Day Club", category: "Day Clubs", city: "Las Vegas", state: "NV", phone: "(702) 785-6200", verified: true, desc: "Multi-tier daytime pool party and lounge experience overlooking the Las Vegas Strip." },
+                { name: "Jetsetter Global Travel Club", category: "Travel Clubs", city: "Dallas", state: "TX", phone: "(214) 555-0189", verified: true, desc: "Luxury private-jet and chartered expedition club for international explorers." },
                 { name: "Newport Harbor Yacht Club", category: "Yacht Clubs", city: "Newport Beach", state: "CA", phone: "(949) 673-7730", verified: true, desc: "Historic yachting club hosting regattas, cruising fleets, and waterfront dining." },
-                { name: "Southern California Bridge Academy", category: "Bridge Clubs", city: "Los Angeles", state: "CA", phone: "(213) 555-0199", verified: false, desc: "Competitive rubber and duplicate bridge sessions in West LA." },
-                { name: "Laguna Beach Book & Writer Club", category: "Book Clubs", city: "Laguna Beach", state: "CA", phone: "(949) 555-0112", verified: false, desc: "Coastal reading group meeting weekly at local galleries." },
-                { name: "Omnia VIP Lounge & Nightclub", category: "Nightlife & VIP Clubs", city: "Las Vegas", state: "NV", phone: "(702) 785-6200", verified: true, desc: "Multi-level luxury nightlife venue with rooftop terrace views of the Las Vegas Strip." },
-                { name: "Key West Yacht Club", category: "Yacht Clubs", city: "Key West", state: "FL", phone: "(305) 296-3446", verified: false, desc: "Deep-water slips, Gulf-to-Atlantic access, and social events in the Lower Keys." },
-                { name: "Boca Raton Tennis & Country Club", category: "Tennis & Racquet Clubs", city: "Boca Raton", state: "FL", phone: "(561) 555-0134", verified: true, desc: "Premier tennis membership with lighted Har-Tru clay courts and pro shop." },
-                { name: "Manhattan Chess Club", category: "Chess Clubs", city: "New York", state: "NY", phone: "(212) 477-3716", verified: true, desc: "Historic chess institution hosting rated tournaments and grandmaster lectures." }
+                { name: "Colonial Heritage Golf Club", category: "Golf Clubs", city: "Williamsburg", state: "VA", phone: "(757) 645-2030", verified: true, desc: "Arthur Hills championship golf design with an active clubhouse and social calendar." }
             ];
 
             var activeState = "";
@@ -203,17 +214,21 @@
 
             var catList = [
                 { id: "", label: "All Categories" },
-                { id: "Aviation Clubs", label: "Aviation Clubs" },
-                { id: "Baseball Clubs", label: "Baseball Clubs" },
+                { id: "Art Clubs", label: "Art Clubs" },
+                { id: "Backgammon Clubs", label: "Backgammon Clubs" },
+                { id: "Beach Clubs", label: "Beach Clubs" },
+                { id: "Bike Clubs", label: "Bike Clubs" },
                 { id: "Book Clubs", label: "Book Clubs" },
-                { id: "Bridge Clubs", label: "Bridge Clubs" },
-                { id: "Chess Clubs", label: "Chess Clubs" },
-                { id: "Cigar Clubs", label: "Cigar Clubs" },
                 { id: "Country Clubs", label: "Country Clubs" },
-                { id: "Cycling Clubs", label: "Cycling Clubs" },
+                { id: "Day Clubs", label: "Day Clubs" },
+                { id: "Dinner Clubs", label: "Dinner Clubs" },
+                { id: "Fitness Clubs", label: "Fitness Clubs" },
+                { id: "Gardening Clubs", label: "Gardening Clubs" },
                 { id: "Golf Clubs", label: "Golf Clubs" },
-                { id: "Nightlife & VIP Clubs", label: "Nightlife & VIP" },
+                { id: "Music Clubs", label: "Music Clubs" },
+                { id: "Night Clubs", label: "Night Clubs" },
                 { id: "Tennis & Racquet Clubs", label: "Tennis Clubs" },
+                { id: "Travel Clubs", label: "Travel Clubs" },
                 { id: "Yacht Clubs", label: "Yacht Clubs" }
             ];
 
@@ -332,8 +347,8 @@
                 var saveBtn = document.getElementById("saveModalBtn");
 
                 document.getElementById("inName").value = club ? club.name : "";
-                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Book Clubs");
-                document.getElementById("inState").value = club ? club.state : (activeState || "VA");
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Beach Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "FL");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
                 document.getElementById("inDesc").value = club ? club.desc : "";
@@ -400,8 +415,9 @@
                     city: document.getElementById("inCity").value.trim(),
                     phone: document.getElementById("inPhone").value.trim() || "(800) 555-0100",
                     verified: true,
-                    desc: document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com."
+                    desc: document.env ? "" : (document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com.")
                 };
+                newEntry.desc = document.getElementById("inDesc").value.trim() || "Verified club listing on MrClubs.com.";
 
                 var foundIdx = -1;
                 for (var i = 0; i < clubs.length; i++) {
