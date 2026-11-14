@@ -34,13 +34,13 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                National A-to-Z Directory • Collegiate, Kennel, Gaming & Social Clubs
+                National A-to-Z Directory • Equestrian, Thoroughbred, Collegiate & Social Clubs
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore university alumni clubs, kennel & pet associations, chess & bridge gaming groups, private social lounges, and country clubs across all 50 states.
+                Explore equestrian & thoroughbred racing clubs, university alumni associations, pet & kennel groups, private social lounges, and country clubs across all 50 states.
             </p>
         </div>
     </header>
@@ -113,7 +113,7 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Harvard Club of New York City" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Jockey Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -128,7 +128,7 @@
                             <option value="Country Clubs">Country Clubs</option>
                             <option value="Day Clubs">Day Clubs</option>
                             <option value="Dinner Clubs">Dinner Clubs</option>
-                            <option value="Equestrian & Polo Clubs">Equestrian & Polo</option>
+                            <option value="Equestrian & Thoroughbred Clubs" selected>Equestrian & Thoroughbred</option>
                             <option value="Fitness Clubs">Fitness Clubs</option>
                             <option value="Gardening Clubs">Gardening Clubs</option>
                             <option value="Gaming & Strategy Clubs">Gaming & Strategy</option>
@@ -141,7 +141,7 @@
                             <option value="Ski & Snowboard Clubs">Ski Clubs</option>
                             <option value="Tennis & Racquet Clubs">Tennis Clubs</option>
                             <option value="Travel Clubs">Travel Clubs</option>
-                            <option value="University & College Clubs" selected>University Clubs</option>
+                            <option value="University & College Clubs">University Clubs</option>
                             <option value="Women's Clubs">Women's Clubs</option>
                             <option value="Yacht Clubs">Yacht Clubs</option>
                         </select>
@@ -149,23 +149,23 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA" selected>MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY" selected>KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Boston" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Lexington" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
-                        <input type="text" id="inPhone" placeholder="(617) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(859) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Street Address *</label>
-                    <input type="text" id="inAddress" required placeholder="e.g. 426 Commonwealth Ave" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inAddress" required placeholder="e.g. 421 Darby Dan Rd" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Official Website URL *</label>
@@ -177,7 +177,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Membership perks, affiliation, or facilities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <textarea id="inDesc" rows="2" placeholder="Membership perks, racing, or equestrian facilities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -191,6 +191,56 @@
     <script>
         window.onload = function () {
             var clubs = [
+                // --- EQUESTRIAN & THOROUGHBRED CLUBS ---
+                { 
+                    name: "The Jockey Club", 
+                    category: "Equestrian & Thoroughbred Clubs", 
+                    city: "Lexington", 
+                    state: "KY", 
+                    address: "821 Corporate Dr", 
+                    phone: "(859) 224-2700", 
+                    website: "https://www.jockeyclub.com", 
+                    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "The historic breed registry and premier governing organization for Thoroughbred racing in North America." 
+                },
+                { 
+                    name: "Keeneland Club", 
+                    category: "Equestrian & Thoroughbred Clubs", 
+                    city: "Lexington", 
+                    state: "KY", 
+                    address: "4201 Versailles Rd", 
+                    phone: "(859) 254-3412", 
+                    website: "https://www.keeneland.com", 
+                    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "World-renowned Thoroughbred auction house, race course, and private racing club facility." 
+                },
+                { 
+                    name: "National Thoroughbred Racing Association (NTRA)", 
+                    category: "Equestrian & Thoroughbred Clubs", 
+                    city: "Lexington", 
+                    state: "KY", 
+                    address: "1010 Monarch St", 
+                    phone: "(859) 422-2627", 
+                    website: "https://www.ntra.com", 
+                    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Coalition representing thoroughbred horse racing farms, racetracks, and owner associations." 
+                },
+                { 
+                    name: "United States Equestrian Federation (USEF)", 
+                    category: "Equestrian & Thoroughbred Clubs", 
+                    city: "Lexington", 
+                    state: "KY", 
+                    address: "4001 W Lexington Dr", 
+                    phone: "(859) 258-2472", 
+                    website: "https://www.usef.org", 
+                    image: "https://images.unsplash.com/photo-1517649763962-0c6232669e02?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "National governing body for equestrian sport, breed associations, and riding clubs." 
+                },
+
                 // --- UNIVERSITY & COLLEGE CLUBS ---
                 { 
                     name: "Harvard Club of New York City", 
@@ -333,20 +383,6 @@
                     desc: "Premier championship courts, pro shop, and member club for competitive pickleball." 
                 },
 
-                // --- EQUESTRIAN & POLO CLUBS ---
-                { 
-                    name: "Santa Barbara Polo & Racquet Club", 
-                    category: "Equestrian & Polo Clubs", 
-                    city: "Carpinteria", 
-                    state: "CA", 
-                    address: "3300 Via Real", 
-                    phone: "(805) 684-6683", 
-                    website: "https://sbpolo.com", 
-                    image: "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=800&q=80",
-                    verified: true, 
-                    desc: "Historic high-goal polo club hosting elite equestrian matches and social memberships." 
-                },
-
                 // --- SKI & SNOWBOARD CLUBS ---
                 { 
                     name: "Aspen Valley Ski & Snowboard Club", 
@@ -445,14 +481,14 @@
                 { id: "Country Clubs", label: "Country Clubs" },
                 { id: "Day Clubs", label: "Day Clubs" },
                 { id: "Dinner Clubs", label: "Dinner Clubs" },
-                { id: "Equestrian & Polo Clubs", label: "Equestrian & Polo" },
+                { id: "Equestrian & Thoroughbred Clubs", label: "Equestrian & Racing" },
                 { id: "Fitness Clubs", label: "Fitness Clubs" },
                 { id: "Gardening Clubs", label: "Gardening Clubs" },
-                { id: "Gaming & Strategy Clubs", label: "Gaming Clubs" },
+                { id: "Gaming & Strategy Clubs", label: "Gaming & Strategy" },
                 { id: "Golf Clubs", label: "Golf Clubs" },
                 { id: "Music Clubs", label: "Music Clubs" },
                 { id: "Night Clubs", label: "Night Clubs" },
-                { id: "Pet & Kennel Clubs", label: "Pet Clubs" },
+                { id: "Pet & Kennel Clubs", label: "Pet & Kennel" },
                 { id: "Pickleball & Racquet Clubs", label: "Pickleball Clubs" },
                 { id: "Private Social Clubs", label: "Private Social Clubs" },
                 { id: "Ski & Snowboard Clubs", label: "Ski Clubs" },
@@ -580,8 +616,8 @@
                 var saveBtn = document.getElementById("saveModalBtn");
 
                 document.getElementById("inName").value = club ? club.name : "";
-                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "University & College Clubs");
-                document.getElementById("inState").value = club ? club.state : (activeState || "MA");
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Equestrian & Thoroughbred Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "KY");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
                 document.getElementById("inAddress").value = club ? club.address : "";
@@ -601,6 +637,7 @@
                     saveBtn.textContent = "Publish Club";
                 }
 
+ModalOverlay = document.getElementById("modalOverlay");
                 modalOverlay.style.display = "flex";
             }
 
