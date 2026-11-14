@@ -34,13 +34,13 @@
     <header class="bg-slate-900 text-white py-12 px-4 text-center border-b border-slate-800">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                National A-to-Z Directory • Equestrian, Thoroughbred, Collegiate & Social Clubs
+                National A-to-Z Directory • Dayclubs, Nightclubs, Equestrian, Collegiate & Social Clubs
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
                 Discover Every Club <span class="text-amber-400">From Art to Yacht</span>
             </h1>
             <p class="mt-3 text-slate-300 text-base max-w-xl mx-auto">
-                Explore equestrian & thoroughbred racing clubs, university alumni associations, pet & kennel groups, private social lounges, and country clubs across all 50 states.
+                Explore Las Vegas dayclubs & nightclubs, equestrian & thoroughbred racing clubs, university alumni associations, private social lounges, and country clubs across all 50 states.
             </p>
         </div>
     </header>
@@ -113,7 +113,7 @@
             <form id="entryForm" class="space-y-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Club Name *</label>
-                    <input type="text" id="inName" required placeholder="e.g. Jockey Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inName" required placeholder="e.g. Encore Beach Club" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -126,9 +126,9 @@
                             <option value="Book Clubs">Book Clubs</option>
                             <option value="Bowling & Alley Clubs">Bowling Clubs</option>
                             <option value="Country Clubs">Country Clubs</option>
-                            <option value="Day Clubs">Day Clubs</option>
+                            <option value="Day Clubs" selected>Day Clubs</option>
                             <option value="Dinner Clubs">Dinner Clubs</option>
-                            <option value="Equestrian & Thoroughbred Clubs" selected>Equestrian & Thoroughbred</option>
+                            <option value="Equestrian & Thoroughbred Clubs">Equestrian & Thoroughbred</option>
                             <option value="Fitness Clubs">Fitness Clubs</option>
                             <option value="Gardening Clubs">Gardening Clubs</option>
                             <option value="Gaming & Strategy Clubs">Gaming & Strategy</option>
@@ -149,23 +149,23 @@
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">State *</label>
                         <select id="inState" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY" selected>KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
+                            <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option><option value="DC">DC</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV" selected>NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option>
                         </select>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">City *</label>
-                        <input type="text" id="inCity" required placeholder="e.g. Lexington" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inCity" required placeholder="e.g. Las Vegas" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number</label>
-                        <input type="text" id="inPhone" placeholder="(859) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <input type="text" id="inPhone" placeholder="(702) 555-0199" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Street Address *</label>
-                    <input type="text" id="inAddress" required placeholder="e.g. 421 Darby Dan Rd" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                    <input type="text" id="inAddress" required placeholder="e.g. 3121 Las Vegas Blvd S" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Official Website URL *</label>
@@ -177,7 +177,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-700 mb-1">Description</label>
-                    <textarea id="inDesc" rows="2" placeholder="Membership perks, racing, or equestrian facilities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
+                    <textarea id="inDesc" rows="2" placeholder="Cabanas, VIP tables, resident DJs, or amenities..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></textarea>
                 </div>
                 <div class="pt-2 flex justify-end gap-2">
                     <button type="button" id="cancelModalBtn" class="px-4 py-2 text-xs font-bold text-slate-600 cursor-pointer bg-transparent border-none">Cancel</button>
@@ -191,6 +191,130 @@
     <script>
         window.onload = function () {
             var clubs = [
+                // --- LAS VEGAS DAY CLUBS ---
+                { 
+                    name: "Encore Beach Club (EBC)", 
+                    category: "Day Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3121 Las Vegas Blvd S (Wynn)", 
+                    phone: "(702) 770-7300", 
+                    website: "https://www.wynnlasvegas.com/nightlife/encore-beach-pool", 
+                    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Luxury Las Vegas Strip dayclub featuring temperature-controlled pools, private bungalows, and headliner DJs." 
+                },
+                { 
+                    name: "Wet Republic Ultra Pool", 
+                    category: "Day Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3799 Las Vegas Blvd S (MGM Grand)", 
+                    phone: "(702) 891-3563", 
+                    website: "https://taogroup.com/venues/wet-republic-ultra-pool-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Sprawling saltwater pool deck, VIP bungalows, and open-air entertainment stage at MGM Grand." 
+                },
+                { 
+                    name: "Marquee Dayclub", 
+                    category: "Day Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3708 Las Vegas Blvd S (The Cosmopolitan)", 
+                    phone: "(702) 333-9000", 
+                    website: "https://taogroup.com/venues/marquee-nightclub-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Multi-level rooftop pool deck and three-story Bungalow Lofts overlooking the Las Vegas Strip." 
+                },
+                { 
+                    name: "TAO Beach Dayclub", 
+                    category: "Day Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3377 Las Vegas Blvd S (The Venetian)", 
+                    phone: "(702) 388-8588", 
+                    website: "https://taogroup.com/venues/tao-beach-dayclub-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Balinese-inspired luxury pool oasis at The Venetian with private cabanas and poolside dining." 
+                },
+                { 
+                    name: "AYU Dayclub", 
+                    category: "Day Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3000 Las Vegas Blvd S (Resorts World)", 
+                    phone: "(702) 676-7000", 
+                    website: "https://www.rwlasvegas.com/entertainment/ayu-dayclub/", 
+                    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Outdoor Southeast Asian island-inspired dayclub and live performance venue at Resorts World." 
+                },
+
+                // --- LAS VEGAS NIGHT CLUBS ---
+                { 
+                    name: "Omnia Nightclub", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3570 Las Vegas Blvd S (Caesars Palace)", 
+                    phone: "(702) 785-6200", 
+                    website: "https://taogroup.com/venues/omnia-nightclub-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "75,000-square-foot multi-level mega-club famous for its kinetic chandelier and Strip terrace." 
+                },
+                { 
+                    name: "Hakkasan Nightclub", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3799 Las Vegas Blvd S (MGM Grand)", 
+                    phone: "(702) 891-3838", 
+                    website: "https://taogroup.com/venues/hakkasan-nightclub-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Five-level nightlife complex at MGM Grand featuring the kinetic LED Grid and resident DJs." 
+                },
+                { 
+                    name: "Zouk Nightclub", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3000 Las Vegas Blvd S (Resorts World)", 
+                    phone: "(702) 676-7000", 
+                    website: "https://zoukgrouplv.com", 
+                    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "High-tech nightlife destination at Resorts World with immersive lighting and VIP booths." 
+                },
+                { 
+                    name: "Marquee Nightclub", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "3708 Las Vegas Blvd S (The Cosmopolitan)", 
+                    phone: "(702) 333-9000", 
+                    website: "https://taogroup.com/venues/marquee-nightclub-las-vegas/", 
+                    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "40,000-square-foot indoor-outdoor club with rooftop patio views and seven distinct bars." 
+                },
+                { 
+                    name: "LIV Nightclub Las Vegas", 
+                    category: "Night Clubs", 
+                    city: "Las Vegas", 
+                    state: "NV", 
+                    address: "2777 Las Vegas Blvd S (Fontainebleau)", 
+                    phone: "(833) 702-7070", 
+                    website: "https://www.fontainebleaulasvegas.com/nightlife/", 
+                    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
+                    verified: true, 
+                    desc: "Flagship luxury nightlife experience at Fontainebleau on the north end of the Las Vegas Strip." 
+                },
+
                 // --- EQUESTRIAN & THOROUGHBRED CLUBS ---
                 { 
                     name: "The Jockey Club", 
@@ -616,8 +740,8 @@
                 var saveBtn = document.getElementById("saveModalBtn");
 
                 document.getElementById("inName").value = club ? club.name : "";
-                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Equestrian & Thoroughbred Clubs");
-                document.getElementById("inState").value = club ? club.state : (activeState || "KY");
+                document.getElementById("inCategory").value = club ? club.category : (activeCategory || "Day Clubs");
+                document.getElementById("inState").value = club ? club.state : (activeState || "NV");
                 document.getElementById("inCity").value = club ? club.city : "";
                 document.getElementById("inPhone").value = club ? club.phone : "";
                 document.getElementById("inAddress").value = club ? club.address : "";
@@ -637,7 +761,6 @@
                     saveBtn.textContent = "Publish Club";
                 }
 
-ModalOverlay = document.getElementById("modalOverlay");
                 modalOverlay.style.display = "flex";
             }
 
